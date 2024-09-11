@@ -6,8 +6,7 @@ import deskStructure from './deskStructure'
 export default defineConfig({
   name: 'default',
   title: 'rotvalta',
-  studioHost: 'rotvalta',
-
+  
   projectId: '4bkz3reu',
   dataset: 'production',
 

@@ -6,12 +6,17 @@
   "scripts": {
     "dev:sveltekit": "pnpm --filter sveltekit dev",
     "dev:sanity": "pnpm --filter sanity start",
-    "dev": "pnpm run dev:sveltekit & pnpm run dev:sanity"
+    "dev": "mprocs",
+    "deploy:sanity": "pnpm --filter sanity deploy",
+    "typegen:sanity": "pnpm --filter sanity typegen"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "workspaces": [
     "packages/*"
-  ]
+  ],
+  "devDependencies": {
+    "mprocs": "^0.7.1"
+  }
 }
