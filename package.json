@@ -1,0 +1,17 @@
+{
+  "name": "rotvalta",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev:sveltekit": "pnpm --filter sveltekit dev",
+    "dev:sanity": "pnpm --filter sanity start",
+    "dev": "pnpm run dev:sveltekit & pnpm run dev:sanity"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "workspaces": [
+    "packages/*"
+  ]
+}
