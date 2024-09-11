@@ -39,22 +39,6 @@ export type SanityImageDimensions = {
   aspectRatio?: number
 }
 
-export type SanityImageHotspot = {
-  _type: 'sanity.imageHotspot'
-  x?: number
-  y?: number
-  height?: number
-  width?: number
-}
-
-export type SanityImageCrop = {
-  _type: 'sanity.imageCrop'
-  top?: number
-  bottom?: number
-  left?: number
-  right?: number
-}
-
 export type SanityFileAsset = {
   _id: string
   _type: 'sanity.fileAsset'
@@ -75,6 +59,97 @@ export type SanityFileAsset = {
   path?: string
   url?: string
   source?: SanityAssetSourceData
+}
+
+export type Geopoint = {
+  _type: 'geopoint'
+  lat?: number
+  lng?: number
+  alt?: number
+}
+
+export type Page = {
+  _id: string
+  _type: 'page'
+  _createdAt: string
+  _updatedAt: string
+  _rev: string
+  title_se?: string
+  title_en?: string
+  image?: {
+    asset?: {
+      _ref: string
+      _type: 'reference'
+      _weak?: boolean
+      [internalGroqTypeReferenceTo]?: 'sanity.imageAsset'
+    }
+    hotspot?: SanityImageHotspot
+    crop?: SanityImageCrop
+    _type: 'image'
+  }
+  content_se?: ContentEditor
+  content_en?: ContentEditor
+  slug?: Slug
+}
+
+export type Slug = {
+  _type: 'slug'
+  current?: string
+  source?: string
+}
+
+export type Homepage = {
+  _id: string
+  _type: 'homepage'
+  _createdAt: string
+  _updatedAt: string
+  _rev: string
+  title_se?: string
+  title_en?: string
+  subTitle_se?: string
+  subTitle_en?: string
+  content_se?: ContentEditor
+  content_en?: ContentEditor
+  logos?: Array<{
+    title?: string
+    link?: string
+    logo?: {
+      asset?: {
+        _ref: string
+        _type: 'reference'
+        _weak?: boolean
+        [internalGroqTypeReferenceTo]?: 'sanity.imageAsset'
+      }
+      hotspot?: SanityImageHotspot
+      crop?: SanityImageCrop
+      _type: 'image'
+    }
+    _type: 'logo'
+    _key: string
+  }>
+  pages?: Array<{
+    _ref: string
+    _type: 'reference'
+    _weak?: boolean
+    _key: string
+    [internalGroqTypeReferenceTo]?: 'page'
+  }>
+}
+
+export type SanityImageCrop = {
+  _type: 'sanity.imageCrop'
+  top?: number
+  bottom?: number
+  left?: number
+  right?: number
+}
+
+export type SanityImageHotspot = {
+  _type: 'sanity.imageHotspot'
+  x?: number
+  y?: number
+  height?: number
+  width?: number
 }
 
 export type SanityImageAsset = {
@@ -100,6 +175,13 @@ export type SanityImageAsset = {
   source?: SanityAssetSourceData
 }
 
+export type SanityAssetSourceData = {
+  _type: 'sanity.assetSourceData'
+  name?: string
+  id?: string
+  url?: string
+}
+
 export type SanityImageMetadata = {
   _type: 'sanity.imageMetadata'
   location?: Geopoint
@@ -109,37 +191,6 @@ export type SanityImageMetadata = {
   blurHash?: string
   hasAlpha?: boolean
   isOpaque?: boolean
-}
-
-export type Geopoint = {
-  _type: 'geopoint'
-  lat?: number
-  lng?: number
-  alt?: number
-}
-
-export type Slug = {
-  _type: 'slug'
-  current?: string
-  source?: string
-}
-
-export type SanityAssetSourceData = {
-  _type: 'sanity.assetSourceData'
-  name?: string
-  id?: string
-  url?: string
-}
-
-export type Homepage = {
-  _id: string
-  _type: 'homepage'
-  _createdAt: string
-  _updatedAt: string
-  _rev: string
-  title?: string
-  subTitle?: string
-  content?: ContentEditor
 }
 
 export type ContentEditor = {
@@ -168,14 +219,15 @@ export type AllSanitySchemaTypes =
   | SanityImagePaletteSwatch
   | SanityImagePalette
   | SanityImageDimensions
-  | SanityImageHotspot
-  | SanityImageCrop
   | SanityFileAsset
-  | SanityImageAsset
-  | SanityImageMetadata
   | Geopoint
+  | Page
   | Slug
-  | SanityAssetSourceData
   | Homepage
+  | SanityImageCrop
+  | SanityImageHotspot
+  | SanityImageAsset
+  | SanityAssetSourceData
+  | SanityImageMetadata
   | ContentEditor
 export declare const internalGroqTypeReferenceTo: unique symbol
