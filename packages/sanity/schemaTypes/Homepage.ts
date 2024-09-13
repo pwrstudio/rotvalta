@@ -83,17 +83,6 @@ export default {
                     },
                 ] 
             }],
-        },
-        {
-            title: 'Pages',
-            name: 'pages',
-            type: 'array',
-            of: [{ 
-                title: 'Page',
-                name: 'page',
-                type: 'reference',
-                to: [{ type: 'page' }]
-            }],
         }
     ],
 }

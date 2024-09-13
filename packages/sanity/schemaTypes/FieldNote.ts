@@ -1,10 +1,10 @@
-import { MdEditDocument } from "react-icons/md"
+import { MdNature } from "react-icons/md"
 
 export default {
-    title: 'Page',
-    name: 'page',
+    title: 'Field note',
+    name: 'fieldNote',
     type: 'document',
-    icon: MdEditDocument,
+    icon: MdNature,
     groups: [
         {
             name: 'en',
@@ -31,9 +31,9 @@ export default {
             validation: (Rule: any) => Rule.required()
         },
         {
-            title: 'Image',
-            name: 'image',
-            type: 'image'
+            title: 'Main image',
+            name: 'mainImage',
+            type: 'image',
         },
         {
             title: 'Content (Swedish)',
@@ -47,14 +47,14 @@ export default {
             type: 'contentEditor',
             group: 'en',
         },
-        { 
+        {
             title: 'Slug',
             name: 'slug',
             type: 'slug',
             options: {
-                source: 'title_se',
+                source: 'title_en',
                 maxLength: 96,
             },
-        },
+        }
     ],
 }

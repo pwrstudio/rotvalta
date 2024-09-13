@@ -68,6 +68,143 @@ export type Geopoint = {
   alt?: number
 }
 
+export type ConversationList = {
+  _id: string
+  _type: 'conversationList'
+  _createdAt: string
+  _updatedAt: string
+  _rev: string
+  title?: string
+  list?: Array<{
+    _ref: string
+    _type: 'reference'
+    _weak?: boolean
+    _key: string
+    [internalGroqTypeReferenceTo]?: 'fieldNote'
+  }>
+}
+
+export type Conversation = {
+  _id: string
+  _type: 'conversation'
+  _createdAt: string
+  _updatedAt: string
+  _rev: string
+  title_se?: string
+  title_en?: string
+  videoUrl?: string
+  mainImage?: {
+    asset?: {
+      _ref: string
+      _type: 'reference'
+      _weak?: boolean
+      [internalGroqTypeReferenceTo]?: 'sanity.imageAsset'
+    }
+    hotspot?: SanityImageHotspot
+    crop?: SanityImageCrop
+    _type: 'image'
+  }
+  content_se?: ContentEditor
+  content_en?: ContentEditor
+  slug?: Slug
+}
+
+export type FieldNoteList = {
+  _id: string
+  _type: 'fieldNoteList'
+  _createdAt: string
+  _updatedAt: string
+  _rev: string
+  title?: string
+  list?: Array<{
+    _ref: string
+    _type: 'reference'
+    _weak?: boolean
+    _key: string
+    [internalGroqTypeReferenceTo]?: 'fieldNote'
+  }>
+}
+
+export type ArchivalNoteList = {
+  _id: string
+  _type: 'archivalNoteList'
+  _createdAt: string
+  _updatedAt: string
+  _rev: string
+  title?: string
+  list?: Array<{
+    _ref: string
+    _type: 'reference'
+    _weak?: boolean
+    _key: string
+    [internalGroqTypeReferenceTo]?: 'archivalNote'
+  }>
+}
+
+export type PageList = {
+  _id: string
+  _type: 'pageList'
+  _createdAt: string
+  _updatedAt: string
+  _rev: string
+  title?: string
+  list?: Array<{
+    _ref: string
+    _type: 'reference'
+    _weak?: boolean
+    _key: string
+    [internalGroqTypeReferenceTo]?: 'page'
+  }>
+}
+
+export type FieldNote = {
+  _id: string
+  _type: 'fieldNote'
+  _createdAt: string
+  _updatedAt: string
+  _rev: string
+  title_se?: string
+  title_en?: string
+  mainImage?: {
+    asset?: {
+      _ref: string
+      _type: 'reference'
+      _weak?: boolean
+      [internalGroqTypeReferenceTo]?: 'sanity.imageAsset'
+    }
+    hotspot?: SanityImageHotspot
+    crop?: SanityImageCrop
+    _type: 'image'
+  }
+  content_se?: ContentEditor
+  content_en?: ContentEditor
+  slug?: Slug
+}
+
+export type ArchivalNote = {
+  _id: string
+  _type: 'archivalNote'
+  _createdAt: string
+  _updatedAt: string
+  _rev: string
+  title_se?: string
+  title_en?: string
+  mainImage?: {
+    asset?: {
+      _ref: string
+      _type: 'reference'
+      _weak?: boolean
+      [internalGroqTypeReferenceTo]?: 'sanity.imageAsset'
+    }
+    hotspot?: SanityImageHotspot
+    crop?: SanityImageCrop
+    _type: 'image'
+  }
+  content_se?: ContentEditor
+  content_en?: ContentEditor
+  slug?: Slug
+}
+
 export type Page = {
   _id: string
   _type: 'page'
@@ -126,13 +263,6 @@ export type Homepage = {
     }
     _type: 'logo'
     _key: string
-  }>
-  pages?: Array<{
-    _ref: string
-    _type: 'reference'
-    _weak?: boolean
-    _key: string
-    [internalGroqTypeReferenceTo]?: 'page'
   }>
 }
 
@@ -221,6 +351,13 @@ export type AllSanitySchemaTypes =
   | SanityImageDimensions
   | SanityFileAsset
   | Geopoint
+  | ConversationList
+  | Conversation
+  | FieldNoteList
+  | ArchivalNoteList
+  | PageList
+  | FieldNote
+  | ArchivalNote
   | Page
   | Slug
   | Homepage
