@@ -1,11 +1,10 @@
 <script lang="ts">
   import { LANGUAGE } from "$lib/enums"
   import { renderBlockText } from "$lib/modules/sanity"
-  import type { Homepage, Page } from "@sanity-types"
+  import type { Homepage } from "@sanity-types"
 
   export let language: LANGUAGE
   export let homepage: Homepage
-  export let pages: Page[]
 </script>
 
 <div class="about">
@@ -27,19 +26,6 @@
 
   <!-- LOGOS -->
   <div class="logos">LOGOS</div>
-
-  <!-- PAGES -->
-  <div class="pages">
-    {#each pages as page}
-      {#if language === LANGUAGE.ENGLISH}
-        <!-- LINK: ENGLISH -->
-        <div class="link">{page.title_en}</div>
-      {:else}
-        <!-- LINK: SWEDISH -->
-        <div class="link">{page.title_se}</div>
-      {/if}
-    {/each}
-  </div>
 </div>
 
 <style lang="scss">
