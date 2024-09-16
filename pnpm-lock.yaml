@@ -25,7 +25,7 @@ importers:
         version: 5.3.0(react@18.3.1)
       sanity:
         specifier: ^3.57.3
-        version: 3.57.3(@types/react@18.3.5)(react-dom@18.3.1)(react@18.3.1)(styled-components@6.1.13)
+        version: 3.57.3(@types/react@18.3.6)(react-dom@18.3.1)(react@18.3.1)(styled-components@6.1.13)
       styled-components:
         specifier: ^6.1.13
         version: 6.1.13(react-dom@18.3.1)(react@18.3.1)
@@ -34,8 +34,8 @@ importers:
         specifier: ^4.0.0
         version: 4.0.0(eslint@8.57.0)(typescript@5.6.2)
       '@types/react':
-        specifier: ^18.3.5
-        version: 18.3.5
+        specifier: ^18.3.6
+        version: 18.3.6
       eslint:
         specifier: ^8.6.0
         version: 8.57.0
@@ -60,10 +60,10 @@ importers:
     devDependencies:
       '@sveltejs/adapter-auto':
         specifier: ^3.2.4
-        version: 3.2.4(@sveltejs/kit@2.5.26)
+        version: 3.2.4(@sveltejs/kit@2.5.27)
       '@sveltejs/kit':
-        specifier: ^2.5.26
-        version: 2.5.26(@sveltejs/vite-plugin-svelte@3.1.2)(svelte@4.2.19)(vite@5.4.5)
+        specifier: ^2.5.27
+        version: 2.5.27(@sveltejs/vite-plugin-svelte@3.1.2)(svelte@4.2.19)(vite@5.4.5)
       '@sveltejs/vite-plugin-svelte':
         specifier: ^3.1.2
         version: 3.1.2(svelte@4.2.19)(vite@5.4.5)
@@ -71,8 +71,8 @@ importers:
         specifier: ^4.2.19
         version: 4.2.19
       svelte-check:
-        specifier: ^4.0.1
-        version: 4.0.1(svelte@4.2.19)(typescript@5.6.2)
+        specifier: ^4.0.2
+        version: 4.0.2(svelte@4.2.19)(typescript@5.6.2)
       typescript:
         specifier: ^5.6.2
         version: 5.6.2
@@ -2247,7 +2247,7 @@ packages:
     resolution: {integrity: sha512-QM0wTENEcGyMNE9rfd33xXciCqmrYF4GJ9eLc0nkyOCjwLXuCvaN7HpenqsMY4JDRSvRH4LjTt9Ypqs4g5AqsA==}
     dependencies:
       '@sanity/types': 3.57.3(debug@4.3.7)
-      '@types/react': 18.3.5
+      '@types/react': 18.3.6
       get-random-values-esm: 1.0.2
       lodash: 4.17.21
     transitivePeerDependencies:
@@ -2594,7 +2594,7 @@ packages:
     resolution: {integrity: sha512-1EfKkNlJ86wIDtc7oFHb79JI8lKDOxKDYrkmwhvuHgJY83GpSABc1kFdbwAtWZfrWVWyqVXUv/KlNwA3b99y/g==}
     dependencies:
       '@sanity/client': 6.21.3(debug@4.3.7)
-      '@types/react': 18.3.5
+      '@types/react': 18.3.6
     transitivePeerDependencies:
       - debug
     dev: false
@@ -2603,7 +2603,7 @@ packages:
     resolution: {integrity: sha512-v/dN/783lhq79jmp8UAnXyxkc11/+1e3Q7IfYfcjweBcrwGXRI+9qcYgDzJ2DaiBbWAUe2c1L4GO7H4123ylGQ==}
     dependencies:
       '@sanity/client': 6.21.3(debug@4.3.7)
-      '@types/react': 18.3.5
+      '@types/react': 18.3.6
     transitivePeerDependencies:
       - debug
     dev: false
@@ -2748,17 +2748,17 @@ packages:
       '@sentry/types': 8.30.0
     dev: false
 
-  /@sveltejs/adapter-auto@3.2.4(@sveltejs/kit@2.5.26):
+  /@sveltejs/adapter-auto@3.2.4(@sveltejs/kit@2.5.27):
     resolution: {integrity: sha512-a64AKYbfTUrVwU0xslzv1Jf3M8bj0IwhptaXmhgIkjXspBXhD0od9JiItQHchijpLMGdEDcYBlvqySkEawv6mQ==}
     peerDependencies:
       '@sveltejs/kit': ^2.0.0
     dependencies:
-      '@sveltejs/kit': 2.5.26(@sveltejs/vite-plugin-svelte@3.1.2)(svelte@4.2.19)(vite@5.4.5)
+      '@sveltejs/kit': 2.5.27(@sveltejs/vite-plugin-svelte@3.1.2)(svelte@4.2.19)(vite@5.4.5)
       import-meta-resolve: 4.1.0
     dev: true
 
-  /@sveltejs/kit@2.5.26(@sveltejs/vite-plugin-svelte@3.1.2)(svelte@4.2.19)(vite@5.4.5):
-    resolution: {integrity: sha512-8l1JTIM2L+bS8ebq1E+nGjv/YSKSnD9Q19bYIUkc41vaEG2JjVUx6ikvPIJv2hkQAuqJLzoPrXlKk4KcyWOv3Q==}
+  /@sveltejs/kit@2.5.27(@sveltejs/vite-plugin-svelte@3.1.2)(svelte@4.2.19)(vite@5.4.5):
+    resolution: {integrity: sha512-CcbRTzl+65oWljAASL6UlxM4x3NWwd0fjq5fQOfP243vs50myFQ8lil0fr3Im6HeeQqYUCtnv8HjO8REWVPjTw==}
     engines: {node: '>=18.13'}
     hasBin: true
     requiresBuild: true
@@ -2954,17 +2954,17 @@ packages:
   /@types/react-copy-to-clipboard@5.0.7:
     resolution: {integrity: sha512-Gft19D+as4M+9Whq1oglhmK49vqPhcLzk8WfvfLvaYMIPYanyfLy0+CwFucMJfdKoSFyySPmkkWn8/E6voQXjQ==}
     dependencies:
-      '@types/react': 18.3.5
+      '@types/react': 18.3.6
     dev: false
 
   /@types/react-is@18.3.0:
     resolution: {integrity: sha512-KZJpHUkAdzyKj/kUHJDc6N7KyidftICufJfOFpiG6haL/BDQNQt5i4n1XDUL/nDZAtGLHDSWRYpLzKTAKSvX6w==}
     dependencies:
-      '@types/react': 18.3.5
+      '@types/react': 18.3.6
     dev: false
 
-  /@types/react@18.3.5:
-    resolution: {integrity: sha512-WeqMfGJLGuLCqHGYRGHxnKrXcTitc6L/nBUWfWPcTarG3t9PsquqUMuVeXZeca+mglY4Vo5GZjCi0A3Or2lnxA==}
+  /@types/react@18.3.6:
+    resolution: {integrity: sha512-CnGaRYNu2iZlkGXGrOYtdg5mLK8neySj0woZ4e2wF/eli2E6Sazmq5X+Nrj6OBrrFVQfJWTUFeqAzoRhWQXYvg==}
     dependencies:
       '@types/prop-types': 15.7.12
       csstype: 3.1.3
@@ -6756,7 +6756,7 @@ packages:
     resolution: {integrity: sha512-nsO+KSNgo1SbJqJEYRE9ERzo7YtYbou/OqjSQKxV7jcKox7+usiUVZOAC+XnDOABXggQTno0Y1CpVnuWEc1boQ==}
     dev: false
 
-  /react-focus-lock@2.13.2(@types/react@18.3.5)(react@18.3.1):
+  /react-focus-lock@2.13.2(@types/react@18.3.6)(react@18.3.1):
     resolution: {integrity: sha512-T/7bsofxYqnod2xadvuwjGKHOoL5GH7/EIPI5UyEvaU/c2CcphvGI371opFtuY/SYdbMsNiuF4HsHQ50nA/TKQ==}
     peerDependencies:
       '@types/react': ^16.8.0 || ^17.0.0 || ^18.0.0
@@ -6766,13 +6766,13 @@ packages:
         optional: true
     dependencies:
       '@babel/runtime': 7.25.6
-      '@types/react': 18.3.5
+      '@types/react': 18.3.6
       focus-lock: 1.3.5
       prop-types: 15.8.1
       react: 18.3.1
       react-clientside-effect: 1.2.6(react@18.3.1)
-      use-callback-ref: 1.3.2(@types/react@18.3.5)(react@18.3.1)
-      use-sidecar: 1.1.2(@types/react@18.3.5)(react@18.3.1)
+      use-callback-ref: 1.3.2(@types/react@18.3.6)(react@18.3.1)
+      use-sidecar: 1.1.2(@types/react@18.3.6)(react@18.3.1)
     dev: false
 
   /react-i18next@14.0.2(i18next@23.15.1)(react-dom@18.3.1)(react@18.3.1):
@@ -7167,7 +7167,7 @@ packages:
       '@sanity/diff-match-patch': 3.1.1
     dev: false
 
-  /sanity@3.57.3(@types/react@18.3.5)(react-dom@18.3.1)(react@18.3.1)(styled-components@6.1.13):
+  /sanity@3.57.3(@types/react@18.3.6)(react-dom@18.3.1)(react@18.3.1)(styled-components@6.1.13):
     resolution: {integrity: sha512-xArMbyJtMtA6TADoxbb5gf7vCRr34USH6p0bjRqKVO4H5gNInKKrB1b1yHdTwme1spivfAVAt/jlmQofiy5UxQ==}
     engines: {node: '>=18'}
     hasBin: true
@@ -7270,7 +7270,7 @@ packages:
       react-copy-to-clipboard: 5.1.0(react@18.3.1)
       react-dom: 18.3.1(react@18.3.1)
       react-fast-compare: 3.2.2
-      react-focus-lock: 2.13.2(@types/react@18.3.5)(react@18.3.1)
+      react-focus-lock: 2.13.2(@types/react@18.3.6)(react@18.3.1)
       react-i18next: 14.0.2(i18next@23.15.1)(react-dom@18.3.1)(react@18.3.1)
       react-is: 18.3.1
       react-refractor: 2.2.0(react@18.3.1)
@@ -7735,8 +7735,8 @@ packages:
       react: 18.3.1
     dev: false
 
-  /svelte-check@4.0.1(svelte@4.2.19)(typescript@5.6.2):
-    resolution: {integrity: sha512-AuWnCZdREoOzMhoptHPUUPYUxLNdXSkoZnPnlv19SZJJimRzLmjjZLKsOiRB4AnhgX+56/WSEdvkWXI/q2BSsA==}
+  /svelte-check@4.0.2(svelte@4.2.19)(typescript@5.6.2):
+    resolution: {integrity: sha512-w2yqcG9ELJe2RJCnAvB7v0OgkHhL3czzz/tVoxGFfO6y4mOrF6QHCDhXijeXzsU7LVKEwWS3Qd9tza4JBuDxqA==}
     engines: {node: '>= 18.0.0'}
     hasBin: true
     peerDependencies:
@@ -8144,7 +8144,7 @@ packages:
       requires-port: 1.0.0
     dev: false
 
-  /use-callback-ref@1.3.2(@types/react@18.3.5)(react@18.3.1):
+  /use-callback-ref@1.3.2(@types/react@18.3.6)(react@18.3.1):
     resolution: {integrity: sha512-elOQwe6Q8gqZgDA8mrh44qRTQqpIHDcZ3hXTLjBe1i4ph8XpNJnO+aQf3NaG+lriLopI4HMx9VjQLfPQ6vhnoA==}
     engines: {node: '>=10'}
     peerDependencies:
@@ -8154,7 +8154,7 @@ packages:
       '@types/react':
         optional: true
     dependencies:
-      '@types/react': 18.3.5
+      '@types/react': 18.3.6
       react: 18.3.1
       tslib: 2.7.0
     dev: false
@@ -8183,7 +8183,7 @@ packages:
       react: 18.3.1
     dev: false
 
-  /use-sidecar@1.1.2(@types/react@18.3.5)(react@18.3.1):
+  /use-sidecar@1.1.2(@types/react@18.3.6)(react@18.3.1):
     resolution: {integrity: sha512-epTbsLuzZ7lPClpz2TyryBfztm7m+28DlEv2ZCQ3MDr5ssiwyOwGH/e5F9CkfWjJ1t4clvI58yF822/GUkjjhw==}
     engines: {node: '>=10'}
     peerDependencies:
@@ -8193,7 +8193,7 @@ packages:
       '@types/react':
         optional: true
     dependencies:
-      '@types/react': 18.3.5
+      '@types/react': 18.3.6
       detect-node-es: 1.1.0
       react: 18.3.1
       tslib: 2.7.0

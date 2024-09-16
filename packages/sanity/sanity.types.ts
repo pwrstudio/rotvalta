@@ -75,12 +75,13 @@ export type ConversationList = {
   _updatedAt: string
   _rev: string
   title?: string
+  showConversations?: boolean
   list?: Array<{
     _ref: string
     _type: 'reference'
     _weak?: boolean
     _key: string
-    [internalGroqTypeReferenceTo]?: 'fieldNote'
+    [internalGroqTypeReferenceTo]?: 'conversation'
   }>
 }
 

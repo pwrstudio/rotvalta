@@ -367,6 +367,13 @@
         },
         "optional": true
       },
+      "showConversations": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "boolean"
+        },
+        "optional": true
+      },
       "list": {
         "type": "objectAttribute",
         "value": {
@@ -395,7 +402,7 @@
                 "optional": true
               }
             },
-            "dereferencesTo": "fieldNote",
+            "dereferencesTo": "conversation",
             "rest": {
               "type": "object",
               "attributes": {

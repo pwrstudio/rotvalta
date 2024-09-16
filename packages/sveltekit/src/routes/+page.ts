@@ -14,7 +14,7 @@ export const load = (async () => {
     const pages = pageList.list as Page[];
     const archivalNotes = archivalNoteList.list as ArchivalNote[];
     const fieldNotes = fieldNoteList.list as FieldNote[];
-    const conversations = conversationList.list as Conversation[];
+    const conversations = conversationList.showConversations ? conversationList.list as Conversation[] : [];
 
     return { homepage, pages, archivalNotes, fieldNotes, conversations };
 }) satisfies PageLoad;

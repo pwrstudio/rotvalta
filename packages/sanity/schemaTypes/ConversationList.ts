@@ -12,6 +12,11 @@ export default {
             validation: (Rule: any) => Rule.required()
         },
         {
+            title: 'Show conversations',
+            name: 'showConversations',
+            type: 'boolean'
+        },
+        {
             title: 'List',
             name: 'list',
             type: 'array',
