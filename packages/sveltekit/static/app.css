@@ -1,0 +1,28 @@
+:root {
+    --backgroundColor: #ffffff;
+    --foregroundColor: #000000;
+    --accentColor: #ff0000;
+    --fontStack: 'Helvetica Neue', Arial, sans-serif;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: var(--fontStack);
+    background-color: var(--backgroundColor);
+    color: var(--foregroundColor);
+}
+
+.above-fold {
+    height: 100vh;
+    background: red;
+    width: 100vw;
+    display: flex;
+}
+
+.below-fold {
+    height: 100vh;
+    background: blue;
+    width: 100vw;
+    display: flex;
+}

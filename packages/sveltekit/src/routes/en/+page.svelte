@@ -13,7 +13,7 @@
   import Conversations from "$lib/components/Conversations/Conversations.svelte"
   import LanguageSwitch from "$lib/components/LanguageSwitch/LanguageSwitch.svelte"
 
-  let language = LANGUAGE.SWEDISH
+  let language = LANGUAGE.ENGLISH
 
   export let data: {
     homepage: Homepage
@@ -27,12 +27,6 @@
 </script>
 
 <LanguageSwitch {language} />
-
-<div class="above-fold">
-  <About {language} {homepage} {pages} />
-  <Notes {language} {archivalNotes} {fieldNotes} />
-</div>
-
-<div class="below-fold">
-  <Conversations {language} {conversations} />
-</div>
+<About {language} {homepage} {pages} />
+<Notes {language} {archivalNotes} {fieldNotes} />
+<Conversations {language} {conversations} />

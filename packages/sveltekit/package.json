@@ -22,6 +22,7 @@
 	"dependencies": {
 		"@sanity/block-content-to-html": "^2.0.0",
 		"@sanity/client": "^6.21.3",
-		"@sanity/image-url": "^1.0.2"
+		"@sanity/image-url": "^1.0.2",
+		"sass-embedded": "^1.78.0"
 	}
 }
