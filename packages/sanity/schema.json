@@ -367,6 +367,20 @@
         },
         "optional": true
       },
+      "label_se": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "string"
+        },
+        "optional": true
+      },
+      "label_en": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "string"
+        },
+        "optional": true
+      },
       "showConversations": {
         "type": "objectAttribute",
         "value": {
@@ -606,6 +620,20 @@
         },
         "optional": true
       },
+      "label_se": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "string"
+        },
+        "optional": true
+      },
+      "label_en": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "string"
+        },
+        "optional": true
+      },
       "list": {
         "type": "objectAttribute",
         "value": {
@@ -688,6 +716,20 @@
         }
       },
       "title": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "string"
+        },
+        "optional": true
+      },
+      "label_se": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "string"
+        },
+        "optional": true
+      },
+      "label_en": {
         "type": "objectAttribute",
         "value": {
           "type": "string"
