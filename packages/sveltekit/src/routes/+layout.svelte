@@ -8,7 +8,6 @@
   } from "@sanity-types"
   import type { Labels } from "$lib/types"
   import { languageStore } from "$lib/stores"
-  import { LANGUAGE } from "$lib/enums"
 
   import About from "$lib/components/About/About.svelte"
   import Notes from "$lib/components/Notes/Notes.svelte"
@@ -31,12 +30,9 @@
     data
 </script>
 
-<slot />
-
-<LanguageSwitch {language} />
-<NavBar {language} {pages} {labels} />
-
 <div class="above-fold">
+  <LanguageSwitch {language} />
+  <NavBar {language} {pages} {labels} />
   <About {language} {homepage} />
   <Notes {language} {archivalNotes} {fieldNotes} {labels} />
 </div>
@@ -44,3 +40,21 @@
 <div class="below-fold">
   <Conversations {language} {conversations} {labels} />
 </div>
+
+<slot />
+
+<style lang="scss">
+  .above-fold {
+    height: 100vh;
+    background: red;
+    width: 100vw;
+    position: relative;
+  }
+
+  .below-fold {
+    height: 100vh;
+    background: blue;
+    width: 100vw;
+    display: flex;
+  }
+</style>

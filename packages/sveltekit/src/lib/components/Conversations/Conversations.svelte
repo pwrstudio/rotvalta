@@ -3,6 +3,8 @@
   import { LANGUAGE } from "$lib/enums"
   import type { Conversation } from "@sanity-types"
 
+  import ConversationItem from "$lib/components/Conversations/ConversationItem.svelte"
+
   export let language: LANGUAGE
   export let conversations: Conversation[]
   export let labels: Labels
@@ -17,10 +19,6 @@
   </h2>
 
   {#each conversations as conversation}
-    <div>
-      {language === LANGUAGE.ENGLISH
-        ? conversation.title_en
-        : conversation.title_se}
-    </div>
+    <ConversationItem {language} {conversation} />
   {/each}
 </div>

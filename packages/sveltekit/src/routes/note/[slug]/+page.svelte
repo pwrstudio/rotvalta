@@ -16,4 +16,4 @@
   $: console.log("note", note)
 </script>
 
-<!-- <PopUp {page} {language} /> -->
+<PopUp page={note} {language} />

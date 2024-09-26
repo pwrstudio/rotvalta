@@ -27,10 +27,13 @@
 
 <style lang="scss">
   .about {
-    height: 80vh;
-    background: green;
-    max-width: 60ch;
-    margin: 40px;
+    position: absolute;
+    top: 60px;
+    left: 20px;
+
+    height: calc(100vh - 120px);
+    background: var(--background-color);
+    width: 500px;
 
     .pages {
       display: flex;

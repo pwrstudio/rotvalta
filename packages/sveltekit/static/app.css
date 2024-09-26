@@ -45,18 +45,5 @@ body, html {
     background-color: var(--background-color);
     color: var(--foreground-color);
     scroll-behavior: smooth;
-}
-
-.above-fold {
-    height: 100vh;
-    background: red;
-    width: 100vw;
-    display: flex;
-}
-
-.below-fold {
-    height: 100vh;
-    background: blue;
-    width: 100vw;
-    display: flex;
+    overflow-x: hidden;
 }

@@ -19,7 +19,7 @@
   </div>
 
   <!-- CONVERSATIONS -->
-  <a href="#conversations" class="conversations">
+  <a class="conversations" href="/#conversations">
     {language === LANGUAGE.ENGLISH
       ? labels.conversations.en
       : labels.conversations.se}

@@ -12,7 +12,7 @@
   $: title = language === LANGUAGE.ENGLISH ? page.title_en : page.title_se
 </script>
 
-<a {href} class="page-link">{title}</a>
+<a class="page-link" {href} data-sveltekit-noscroll>{title}</a>
 
 <style lang="scss">
   .page-link {

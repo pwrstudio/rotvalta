@@ -1,9 +1,14 @@
 <script lang="ts">
   import { LANGUAGE } from "$lib/enums"
-  import type { Page } from "@sanity-types"
+  import type {
+    Page,
+    FieldNote,
+    ArchivalNote,
+    Conversation,
+  } from "@sanity-types"
   import { renderBlockText } from "$lib/modules/sanity"
 
-  export let page: Page
+  export let page: Page | FieldNote | ArchivalNote | Conversation
   export let language: LANGUAGE
 
   $: title = language === LANGUAGE.ENGLISH ? page.title_en : page.title_se
@@ -16,7 +21,7 @@
 
 <div class="pop-up-container">
   <div class="pop-up">
-    <a {href} class="close">X</a>
+    <a {href} class="close" data-sveltekit-noscroll>X</a>
     <h2>{title}</h2>
     <div class="content">{@html renderBlockText(content)}</div>
   </div>
