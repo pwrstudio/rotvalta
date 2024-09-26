@@ -5,25 +5,22 @@
 
   export let language: LANGUAGE
   export let homepage: Homepage
+
+  $: title =
+    language === LANGUAGE.ENGLISH ? homepage.title_en : homepage.title_se
+  $: subTitle =
+    language === LANGUAGE.ENGLISH ? homepage.subTitle_en : homepage.subTitle_se
+  $: content =
+    language === LANGUAGE.ENGLISH
+      ? (homepage.content_en?.content ?? [])
+      : (homepage.content_se?.content ?? [])
 </script>
 
 <div class="about">
-  {#if language === LANGUAGE.ENGLISH}
-    <!-- TITLE: ENGLISH -->
-    <h1>{homepage.title_en} / {homepage.subTitle_en}</h1>
-    <div class="content">
-      <!-- CONTENT: ENGLISH -->
-      {@html renderBlockText(homepage.content_en?.content ?? [])}
-    </div>
-  {:else}
-    <!-- TITLE: SWEDISH -->
-    <h1>{homepage.title_se} / {homepage.subTitle_se}</h1>
-    <div class="content">
-      <!-- CONTENT: SWEDISH -->
-      {@html renderBlockText(homepage.content_se?.content ?? [])}
-    </div>
-  {/if}
-
+  <h1>{title} / {subTitle}</h1>
+  <div class="content">
+    {@html renderBlockText(content)}
+  </div>
   <!-- LOGOS -->
   <div class="logos">LOGOS</div>
 </div>

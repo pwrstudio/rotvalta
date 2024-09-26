@@ -3,6 +3,8 @@
   import type { Page } from "@sanity-types"
   import type { Labels } from "$lib/types"
 
+  import PageLink from "$lib/components/NavBar/PageLink.svelte"
+
   export let language: LANGUAGE
   export let pages: Page[]
   export let labels: Labels
@@ -12,25 +14,16 @@
   <!-- PAGES -->
   <div class="pages">
     {#each pages as page}
-      {#if language === LANGUAGE.ENGLISH}
-        <!-- LINK: ENGLISH -->
-        <div class="link">{page.title_en}</div>
-      {:else}
-        <!-- LINK: SWEDISH -->
-        <div class="link">{page.title_se}</div>
-      {/if}
+      <PageLink {page} {language} />
     {/each}
   </div>
 
   <!-- CONVERSATIONS -->
-  <div class="conversations">
-    <!-- LABEL -->
-    {#if language === LANGUAGE.ENGLISH}
-      <div>{labels.conversations.en}</div>
-    {:else}
-      <div>{labels.conversations.se}</div>
-    {/if}
-  </div>
+  <a href="#conversations" class="conversations">
+    {language === LANGUAGE.ENGLISH
+      ? labels.conversations.en
+      : labels.conversations.se}
+  </a>
 </div>
 
 <style lang="scss">
@@ -45,10 +38,11 @@
 
     .pages {
       display: flex;
+    }
 
-      .link {
-        margin-right: 10px;
-      }
+    .conversations {
+      text-decoration: none;
+      color: var(--foreground-color);
     }
   }
 </style>

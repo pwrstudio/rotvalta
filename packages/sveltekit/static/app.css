@@ -44,6 +44,7 @@ body, html {
     font-family: var(--font-family-normal);
     background-color: var(--background-color);
     color: var(--foreground-color);
+    scroll-behavior: smooth;
 }
 
 .above-fold {

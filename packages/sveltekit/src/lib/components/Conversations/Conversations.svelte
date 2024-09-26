@@ -8,19 +8,19 @@
   export let labels: Labels
 </script>
 
-<div class="conversations-container">
+<div id="conversations" class="conversations-container">
   <!-- LABEL -->
-  {#if language === LANGUAGE.ENGLISH}
-    <h2>{labels.conversations.en}</h2>
-  {:else}
-    <h2>{labels.conversations.se}</h2>
-  {/if}
+  <h2>
+    {language === LANGUAGE.ENGLISH
+      ? labels.conversations.en
+      : labels.conversations.se}
+  </h2>
 
   {#each conversations as conversation}
-    {#if language === LANGUAGE.ENGLISH}
-      <div>{conversation.title_en}</div>
-    {:else}
-      <div>{conversation.title_se}</div>
-    {/if}
+    <div>
+      {language === LANGUAGE.ENGLISH
+        ? conversation.title_en
+        : conversation.title_se}
+    </div>
   {/each}
 </div>

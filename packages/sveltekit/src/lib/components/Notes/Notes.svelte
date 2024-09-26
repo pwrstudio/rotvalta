@@ -12,37 +12,27 @@
 <div class="notes">
   <!-- ARCHIVAL NOTES -->
   <div class="archival-notes">
-    <!-- LABEL -->
-    {#if language === LANGUAGE.ENGLISH}
-      <h2>{labels.archivalNotes.en}</h2>
-    {:else}
-      <h2>{labels.archivalNotes.se}</h2>
-    {/if}
+    <h2>
+      {language === LANGUAGE.ENGLISH
+        ? labels.archivalNotes.en
+        : labels.archivalNotes.se}
+    </h2>
 
     {#each archivalNotes as note}
-      {#if language === LANGUAGE.ENGLISH}
-        <div>{note.title_en}</div>
-      {:else}
-        <div>{note.title_se}</div>
-      {/if}
+      <div>{language === LANGUAGE.ENGLISH ? note.title_en : note.title_se}</div>
     {/each}
   </div>
 
   <!-- FIELD NOTES -->
   <div class="field-notes">
-    <!-- LABEL -->
-    {#if language === LANGUAGE.ENGLISH}
-      <h2>{labels.fieldNotes.en}</h2>
-    {:else}
-      <h2>{labels.fieldNotes.se}</h2>
-    {/if}
+    <h2>
+      {language === LANGUAGE.ENGLISH
+        ? labels.fieldNotes.en
+        : labels.fieldNotes.se}
+    </h2>
 
     {#each fieldNotes as note}
-      {#if language === LANGUAGE.ENGLISH}
-        <div>{note.title_en}</div>
-      {:else}
-        <div>{note.title_se}</div>
-      {/if}
+      <div>{language === LANGUAGE.ENGLISH ? note.title_en : note.title_se}</div>
     {/each}
   </div>
 </div>
