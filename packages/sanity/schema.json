@@ -1193,7 +1193,7 @@
         },
         "optional": true
       },
-      "image": {
+      "mainImage": {
         "type": "objectAttribute",
         "value": {
           "type": "object",

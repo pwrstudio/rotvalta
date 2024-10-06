@@ -19,5 +19,9 @@
     margin-right: 10px;
     color: var(--foreground-color);
     text-decoration: none;
+
+    &:hover {
+      color: var(--accent-color);
+    }
   }
 </style>

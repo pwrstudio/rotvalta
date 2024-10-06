@@ -1,7 +1,8 @@
 <script lang="ts">
   import { LANGUAGE } from "$lib/enums"
-  import { renderBlockText } from "$lib/modules/sanity"
   import type { Homepage } from "@sanity-types"
+  import { renderBlockText } from "$lib/modules/sanity"
+  import Logos from "$lib/components/About/Logos.svelte"
 
   export let language: LANGUAGE
   export let homepage: Homepage
@@ -17,29 +18,50 @@
 </script>
 
 <div class="about">
-  <h1>{title} / {subTitle}</h1>
+  <!-- TITLE -->
+  <div class="title">
+    <h1>{title}</h1>
+    <span class="divider">/</span>
+    <h2>{subTitle}</h2>
+  </div>
+
+  <!-- CONTENT -->
   <div class="content">
     {@html renderBlockText(content)}
+    <!-- <a class="read-more">Read more</div> -->
   </div>
+
   <!-- LOGOS -->
-  <div class="logos">LOGOS</div>
+  <div class="logos">
+    <Logos logos={homepage.logos} />
+  </div>
 </div>
 
 <style lang="scss">
   .about {
-    position: absolute;
-    top: 60px;
-    left: 20px;
+    height: 100%;
+    margin-right: var(--total-margin);
+    width: 50ch;
+    padding-inline: var(--total-margin);
+    padding-top: 100px;
+    flex-shrink: 0;
 
-    height: calc(100vh - 120px);
-    background: var(--background-color);
-    width: 500px;
+    .title {
+      margin-bottom: 1em;
 
-    .pages {
-      display: flex;
+      h1,
+      h2 {
+        display: inline-block;
+      }
 
-      .link {
-        margin-right: 10px;
+      .divider {
+        font-size: var(--font-size-large);
+      }
+    }
+
+    .content {
+      .read-more {
+        float: right;
       }
     }
   }

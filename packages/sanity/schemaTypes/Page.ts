@@ -31,9 +31,9 @@ export default {
             validation: (Rule: any) => Rule.required()
         },
         {
-            title: 'Image',
-            name: 'image',
-            type: 'image'
+            title: 'Main image',
+            name: 'mainImage',
+            type: 'image',
         },
         {
             title: 'Content (Swedish)',

@@ -220,7 +220,7 @@ export type Page = {
   _rev: string
   title_se?: string
   title_en?: string
-  image?: {
+  mainImage?: {
     asset?: {
       _ref: string
       _type: 'reference'

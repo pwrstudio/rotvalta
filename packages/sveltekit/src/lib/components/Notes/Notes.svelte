@@ -18,7 +18,7 @@
     <!-- ARCHIVAL NOTES -->
     <div class="line archival-notes">
       <!-- LABEL -->
-      <div class="label">
+      <div class="label archival">
         {language === LANGUAGE.ENGLISH
           ? labels.archivalNotes.en
           : labels.archivalNotes.se}
@@ -39,7 +39,7 @@
     <!-- FIELD NOTES -->
     <div class="line field-notes">
       <!-- LABEL -->
-      <div class="label">
+      <div class="label field">
         {language === LANGUAGE.ENGLISH
           ? labels.fieldNotes.en
           : labels.fieldNotes.se}
@@ -56,14 +56,8 @@
 
 <style lang="scss">
   .notes {
-    position: absolute;
-    top: 60px;
-    left: 480px;
-    height: calc(100vh - 120px);
-    width: calc(100vw - 480px);
-    background: pink;
+    height: 100vh;
     position: relative;
-    overflow-x: scroll;
     display: flex;
     align-items: center;
     line-height: 0;
@@ -72,28 +66,32 @@
       .line {
         padding-left: 40px;
         position: relative;
-        background: yellow;
         display: inline-block;
-        padding-right: 40px;
+        padding-right: var(--double-total-margin);
 
         &.archival-notes {
-          margin-bottom: 40px;
+          margin-bottom: var(--total-margin);
         }
 
         .label {
           position: absolute;
           bottom: 0;
           left: 20px;
-          background: red;
           transform: rotateZ(-90deg);
           transform-origin: bottom left;
+          user-select: none;
+
+          &.field {
+            bottom: unset;
+            top: 0;
+            transform: rotateZ(-90deg) translateX(-100%);
+          }
         }
       }
     }
 
     .note-container {
       display: flex;
-      // display: none;
     }
   }
 </style>

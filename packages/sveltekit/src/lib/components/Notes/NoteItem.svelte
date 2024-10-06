@@ -16,12 +16,17 @@
 
 <a class="note-item" {href} data-sveltekit-noscroll>
   <div class="image">
-    <img {src} alt={title} />
+    <img {src} alt={title} draggable="false" />
   </div>
 </a>
 
 <style lang="scss">
   .note-item {
     line-height: 0;
+    user-select: none;
+
+    &:hover {
+      opacity: 0.8;
+    }
   }
 </style>
