@@ -16,7 +16,7 @@
 
 <style lang="scss">
   .page-link {
-    margin-right: 10px;
+    margin-right: 20px;
     color: var(--foreground-color);
     text-decoration: none;
 
