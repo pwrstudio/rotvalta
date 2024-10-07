@@ -27,11 +27,6 @@
       <div class="note-container">
         {#each archivalNotes as note}
           <NoteItem {note} {language} />
-          <NoteItem {note} {language} />
-          <NoteItem {note} {language} />
-          <NoteItem {note} {language} />
-          <NoteItem {note} {language} />
-          <NoteItem {note} {language} />
         {/each}
       </div>
     </div>

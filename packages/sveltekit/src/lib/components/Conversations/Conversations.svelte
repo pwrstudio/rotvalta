@@ -8,15 +8,8 @@
   export let language: LANGUAGE
   export let conversations: Conversation[]
 
-  const [firstConversationGroup, secondConversationGroup] = splitArray([
-    ...conversations,
-    ...conversations,
-    ...conversations,
-    ...conversations,
-    ...conversations,
-    ...conversations,
-    ...conversations,
-  ])
+  const [firstConversationGroup, secondConversationGroup] =
+    splitArray(conversations)
 </script>
 
 <div id="conversations" class="conversations-container">
