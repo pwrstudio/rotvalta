@@ -18,22 +18,24 @@
 </script>
 
 <div class="about">
-  <!-- TITLE -->
-  <div class="title">
-    <h1>{title}</h1>
-    <span class="divider">/</span>
-    <h2>{subTitle}</h2>
-  </div>
+  <div class="inner">
+    <!-- TITLE -->
+    <div class="title">
+      <h1>{title}</h1>
+      <span class="divider">/</span>
+      <h2>{subTitle}</h2>
+    </div>
 
-  <!-- CONTENT -->
-  <div class="content">
-    {@html renderBlockText(content)}
-    <!-- <a class="read-more">Read more</div> -->
-  </div>
+    <!-- CONTENT -->
+    <div class="content">
+      {@html renderBlockText(content)}
+      <!-- <a class="read-more">Read more</div> -->
+    </div>
 
-  <!-- LOGOS -->
-  <div class="logos">
-    <Logos logos={homepage.logos} />
+    <!-- LOGOS -->
+    <div class="logos">
+      <Logos logos={homepage.logos} />
+    </div>
   </div>
 </div>
 
@@ -43,8 +45,11 @@
     margin-right: var(--total-margin);
     width: 50ch;
     padding-inline: var(--total-margin);
-    padding-top: 100px;
     flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
     .title {
       margin-bottom: 1em;

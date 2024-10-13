@@ -17,6 +17,5 @@
   .logos-container {
     display: flex;
     gap: 10px;
-    margin-top: 6em;
   }
 </style>

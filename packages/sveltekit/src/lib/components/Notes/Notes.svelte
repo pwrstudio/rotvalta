@@ -65,7 +65,7 @@
         padding-right: var(--double-total-margin);
 
         &.archival-notes {
-          margin-bottom: var(--total-margin);
+          margin-bottom: 8em;
         }
 
         .label {
