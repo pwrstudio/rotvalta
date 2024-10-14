@@ -58,6 +58,8 @@
     line-height: 0;
 
     .inner {
+      display: flex;
+      flex-direction: column;
       .line {
         padding-left: 40px;
         position: relative;
