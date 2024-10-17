@@ -2,6 +2,7 @@
   import type { ArchivalNote, FieldNote } from "@sanity-types"
   import { LANGUAGE } from "$lib/enums"
   import { urlFor } from "$lib/modules/sanity"
+  import { isPortraitImage } from "$lib/modules/utils"
 
   export let language: LANGUAGE
   export let note: FieldNote | ArchivalNote
@@ -11,7 +12,9 @@
     language === LANGUAGE.ENGLISH
       ? `/en/note/${note.slug?.current ?? ""}`
       : `/note/${note.slug?.current ?? ""}`
-  $: src = urlFor(note.mainImage).height(200).url()
+  $: src = isPortraitImage(note.mainImage)
+    ? urlFor(note.mainImage).width(200).url()
+    : urlFor(note.mainImage).height(200).url()
 </script>
 
 <a class="note-item" {href} data-sveltekit-noscroll>

@@ -23,7 +23,7 @@
       : (page.content_se?.content ?? [])
   $: href = language === LANGUAGE.ENGLISH ? "/en" : "/"
   $: src = page.mainImage
-    ? urlFor(page.mainImage).height(200).saturation(-100).url()
+    ? urlFor(page.mainImage).height(600).saturation(-100).url()
     : ""
   $: videoUrl = page?.videoUrl ?? ""
 
@@ -85,6 +85,8 @@
     .pop-up {
       width: 70ch;
       max-width: 90vw;
+      max-height: 90vh;
+      overflow-y: auto;
       padding: var(--total-margin);
       background: var(--background-color);
       border: 1px solid var(--accent-color);
@@ -103,7 +105,23 @@
       }
 
       .image {
+        width: 400px;
         margin-right: var(--outer-margin);
+
+        img {
+          width: 100%;
+          height: auto;
+          object-fit: cover;
+        }
+      }
+
+      .text {
+        width: calc(100% - 400px);
+
+        .content {
+          white-space: break-spaces;
+          padding-bottom: 4em;
+        }
       }
     }
   }

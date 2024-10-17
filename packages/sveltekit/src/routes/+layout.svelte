@@ -23,8 +23,6 @@
 
   let scrollContainer: HTMLDivElement
 
-  $: console.log("horizontallyScrolled", $horizonallyScrolled)
-
   $: language = $languageStore
 
   export let data: {

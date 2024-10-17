@@ -24,7 +24,7 @@
           : labels.archivalNotes.se}
       </div>
       <!-- NOTES -->
-      <div class="note-container">
+      <div class="note-container archival-notes">
         {#each archivalNotes as note}
           <NoteItem {note} {language} />
         {/each}
@@ -40,7 +40,7 @@
           : labels.fieldNotes.se}
       </div>
       <!-- NOTES -->
-      <div class="note-container">
+      <div class="note-container field-notes">
         {#each fieldNotes as note}
           <NoteItem {note} {language} />
         {/each}
@@ -60,14 +60,27 @@
     .inner {
       display: flex;
       flex-direction: column;
+
       .line {
         padding-left: 40px;
         position: relative;
-        display: inline-block;
+        display: inline;
         padding-right: var(--double-total-margin);
 
         &.archival-notes {
           margin-bottom: 8em;
+        }
+
+        .note-container {
+          display: flex;
+
+          &.archival-notes {
+            align-items: flex-end;
+          }
+
+          &.field-notes {
+            align-items: flex-start;
+          }
         }
 
         .label {
@@ -85,10 +98,6 @@
           }
         }
       }
-    }
-
-    .note-container {
-      display: flex;
     }
   }
 </style>

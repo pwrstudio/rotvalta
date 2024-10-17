@@ -33,3 +33,12 @@ export type Logo = {
     _type: 'logo'
     _key: string
 }
+
+export type ImageObject = {
+    asset: {
+      _ref: string;
+      _type: "reference";
+    };
+    _type: "image";
+};
+  
