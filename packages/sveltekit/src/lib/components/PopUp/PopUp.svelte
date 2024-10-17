@@ -8,10 +8,9 @@
     Conversation,
   } from "@sanity-types"
   import { renderBlockText, urlFor } from "$lib/modules/sanity"
-  import { disablePageScroll, enablePageScroll } from "scroll-lock"
   import { goto } from "$app/navigation"
   import X from "../Graphics/X.svelte"
-  import { onDestroy, onMount } from "svelte"
+  // import { onDestroy, onMount } from "svelte"
   import VideoPlayer from "../VideoPlayer/VideoPlayer.svelte"
 
   export let page: Page | FieldNote | ArchivalNote | Conversation
@@ -33,13 +32,13 @@
     return event
   }
 
-  onMount(() => {
-    disablePageScroll()
-  })
+  // onMount(() => {
+  //   disablePageScroll()
+  // })
 
-  onDestroy(() => {
-    enablePageScroll()
-  })
+  // onDestroy(() => {
+  //   enablePageScroll()
+  // })
 </script>
 
 <div
