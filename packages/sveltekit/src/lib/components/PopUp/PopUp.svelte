@@ -123,7 +123,9 @@
         }
 
         .content {
-          white-space: break-spaces;
+          white-space: normal; /* Collapses unnecessary whitespace */
+          overflow-wrap: break-word;
+          hyphens: auto;
           padding-bottom: 4em;
         }
       }
