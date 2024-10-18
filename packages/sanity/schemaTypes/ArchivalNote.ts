@@ -36,6 +36,12 @@ export default {
             type: 'image',
         },
         {
+            title: "Hide image in pop-up",
+            description: "Toggle this to only show text in the pop-up",
+            name: "hideImageInPopup",
+            type: "boolean",
+        },
+        {
             title: 'Content (Swedish)',
             name: 'content_se',
             type: 'contentEditor',

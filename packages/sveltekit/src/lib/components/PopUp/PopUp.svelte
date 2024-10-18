@@ -47,14 +47,14 @@
   on:click={closePopUp}
   in:fade={{ duration: 200 }}
 >
-  <div class="pop-up">
+  <div class="pop-up" class:textonly={page.hideImageInPopup ?? false}>
     <!-- CLOSE -->
     <a {href} class="close" data-sveltekit-noscroll><X /></a>
 
     {#if videoUrl}
       <VideoPlayer {videoUrl} />
     {:else}
-      {#if src}
+      {#if src && (!page.hideImageInPopup ?? false)}
         <!-- IMAGE -->
         <div class="image">
           <img {src} alt={title} draggable="false" />
@@ -118,9 +118,23 @@
       .text {
         width: calc(100% - 400px);
 
+        h2 {
+          margin-bottom: 1em;
+        }
+
         .content {
           white-space: break-spaces;
           padding-bottom: 4em;
+        }
+      }
+
+      &.textonly {
+        .image {
+          display: none;
+        }
+
+        .text {
+          width: 100%;
         }
       }
     }

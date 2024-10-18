@@ -981,6 +981,13 @@
         },
         "optional": true
       },
+      "hideImageInPopup": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "boolean"
+        },
+        "optional": true
+      },
       "content_se": {
         "type": "objectAttribute",
         "value": {
@@ -1118,6 +1125,13 @@
         },
         "optional": true
       },
+      "hideImageInPopup": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "boolean"
+        },
+        "optional": true
+      },
       "content_se": {
         "type": "objectAttribute",
         "value": {
@@ -1252,6 +1266,13 @@
               }
             }
           }
+        },
+        "optional": true
+      },
+      "hideImageInPopup": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "boolean"
         },
         "optional": true
       },
