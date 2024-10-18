@@ -66,6 +66,9 @@
         position: relative;
         display: inline;
         padding-right: var(--double-total-margin);
+        height: 300px;
+        padding-bottom: 0;
+        display: flex;
 
         &.archival-notes {
           margin-bottom: 8em;
