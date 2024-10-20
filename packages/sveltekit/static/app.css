@@ -38,10 +38,9 @@
     /* Typo */
     --font-family-normal: 'lars-extended', sans-serif;
     --font-family-extended: 'lars-extended', sans-serif;
-    --font-size-small: 14px;
     --font-size-normal: 16px;
-    --font-size-mid: 22px;
-    --font-size-large: 48px;
+    --font-size-mid: 24px;
+    --font-size-large: 32px;
     /* Spacing */
     --outer-margin: 20px;
     --inner-margin: 10px;
@@ -70,11 +69,13 @@ body, html {
 h1 {
     font-size: var(--font-size-large);
     margin: 0;
+    font-weight: normal;
 }
 
 h2 {
     font-size: var(--font-size-mid);
     margin: 0;
+    font-weight: normal;
 }
 
 p:first-child {

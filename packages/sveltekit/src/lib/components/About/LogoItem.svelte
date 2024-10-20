@@ -15,8 +15,8 @@
 <style lang="scss">
   .logo {
     display: block;
-    width: 60px;
-    height: 60px;
+    width: 80px;
+    height: 80px;
 
     img {
       width: 100%;

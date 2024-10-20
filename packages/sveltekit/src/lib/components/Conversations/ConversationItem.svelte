@@ -44,7 +44,7 @@
     .content {
       flex: 1;
       padding-right: var(--outer-margin);
-      font-size: var(--font-size-small);
+      font-size: var(--font-size-normal);
     }
 
     a {

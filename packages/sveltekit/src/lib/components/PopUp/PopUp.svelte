@@ -83,7 +83,7 @@
     background: rgba(255, 255, 255, 0.8);
 
     .pop-up {
-      width: 70ch;
+      width: 60ch;
       max-width: 90vw;
       max-height: 90vh;
       overflow-y: auto;
