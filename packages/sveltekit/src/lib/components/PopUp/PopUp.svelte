@@ -22,9 +22,7 @@
       ? (page.content_en?.content ?? [])
       : (page.content_se?.content ?? [])
   $: href = language === LANGUAGE.ENGLISH ? "/en" : "/"
-  $: src = page.mainImage
-    ? urlFor(page.mainImage).height(600).saturation(-100).url()
-    : ""
+  $: src = page.mainImage ? urlFor(page.mainImage).height(600).url() : ""
   $: videoUrl = page?.videoUrl ?? ""
 
   function closePopUp(event: MouseEvent) {

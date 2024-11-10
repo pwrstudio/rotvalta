@@ -17,7 +17,7 @@
     language === LANGUAGE.ENGLISH
       ? `/en/conversation/${conversation.slug?.current ?? ""}`
       : `/conversation/${conversation.slug?.current ?? ""}`
-  $: src = urlFor(conversation.mainImage).height(200).saturation(-100).url()
+  $: src = urlFor(conversation.mainImage).height(200).url()
   $: content =
     language === LANGUAGE.ENGLISH
       ? (conversation.content_en?.content ?? [])
