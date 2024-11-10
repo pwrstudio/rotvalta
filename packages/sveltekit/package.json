@@ -10,21 +10,21 @@
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
 	},
 	"devDependencies": {
-		"@sveltejs/adapter-auto": "^3.2.5",
-		"@sveltejs/kit": "^2.7.2",
+		"@sveltejs/adapter-auto": "^3.3.1",
+		"@sveltejs/kit": "^2.8.0",
 		"@sveltejs/vite-plugin-svelte": "^4.0.0",
-		"sass-embedded": "^1.80.3",
-		"svelte": "^5.0.3",
-		"svelte-check": "^4.0.5",
+		"sass-embedded": "^1.80.6",
+		"svelte": "^5.1.13",
+		"svelte-check": "^4.0.6",
 		"typescript": "^5.6.3",
-		"vite": "^5.4.9"
+		"vite": "^5.4.10"
 	},
 	"type": "module",
 	"dependencies": {
 		"@sanity/block-content-to-html": "^2.0.0",
-		"@sanity/client": "^6.22.2",
-		"@sanity/image-url": "^1.0.2",
-		"embla-carousel": "^8.3.0",
+		"@sanity/client": "^6.22.4",
+		"@sanity/image-url": "^1.1.0",
+		"embla-carousel": "^8.3.1",
 		"get-video-id": "^4.1.7"
 	}
 }
