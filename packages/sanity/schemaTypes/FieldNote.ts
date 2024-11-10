@@ -36,9 +36,9 @@ export default {
             type: 'image',
         },
         {
-            title: "Hide image in pop-up",
+            title: "Hide media in pop-up",
             description: "Toggle this to only show text in the pop-up",
-            name: "hideImageInPopup",
+            name: "hideMediaInPopup",
             type: "boolean",
         },
         {

@@ -52,7 +52,7 @@
     align-items: center;
 
     .title {
-      margin-bottom: 1em;
+      margin-bottom: 2em;
 
       h1,
       h2 {

@@ -981,7 +981,7 @@
         },
         "optional": true
       },
-      "hideImageInPopup": {
+      "hideMediaInPopup": {
         "type": "objectAttribute",
         "value": {
           "type": "boolean"
@@ -1125,7 +1125,7 @@
         },
         "optional": true
       },
-      "hideImageInPopup": {
+      "hideMediaInPopup": {
         "type": "objectAttribute",
         "value": {
           "type": "boolean"
@@ -1269,7 +1269,7 @@
         },
         "optional": true
       },
-      "hideImageInPopup": {
+      "hideMediaInPopup": {
         "type": "objectAttribute",
         "value": {
           "type": "boolean"

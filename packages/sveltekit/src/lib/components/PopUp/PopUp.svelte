@@ -25,6 +25,9 @@
   $: src = page.mainImage ? urlFor(page.mainImage).height(600).url() : ""
   $: videoUrl = page?.videoUrl ?? ""
 
+  $: hideMedia = page.hideMediaInPopup || (!src && !videoUrl)
+  $: hideText = content.length === 0
+
   function closePopUp(event: MouseEvent) {
     goto(href, { noScroll: true })
     return event
@@ -45,25 +48,24 @@
   on:click={closePopUp}
   in:fade={{ duration: 200 }}
 >
-  <div class="pop-up" class:textonly={page.hideImageInPopup ?? false}>
+  <div class="pop-up" class:hideMedia class:hideText>
     <!-- CLOSE -->
     <a {href} class="close" data-sveltekit-noscroll><X /></a>
 
-    {#if videoUrl}
-      <VideoPlayer {videoUrl} />
-    {:else}
-      {#if src && (!page.hideImageInPopup ?? false)}
-        <!-- IMAGE -->
-        <div class="image">
-          <img {src} alt={title} draggable="false" />
-        </div>
+    <!-- MEDIA -->
+    <div class="column media">
+      {#if videoUrl}
+        <VideoPlayer {videoUrl} />
+      {:else}
+        <img {src} alt={title} draggable="false" />
       {/if}
-      <!-- TEXT -->
-      <div class="text">
-        <h2>{title}</h2>
-        <div class="content">{@html renderBlockText(content)}</div>
-      </div>
-    {/if}
+    </div>
+
+    <!-- TEXT -->
+    <div class="column text">
+      <h2>{title}</h2>
+      <div class="content">{@html renderBlockText(content)}</div>
+    </div>
   </div>
 </div>
 
@@ -81,11 +83,11 @@
     background: rgba(255, 255, 255, 0.8);
 
     .pop-up {
-      width: 60ch;
+      width: 80ch;
       max-width: 90vw;
       max-height: 90vh;
-      overflow-y: auto;
       padding: var(--total-margin);
+      padding-bottom: 0;
       background: var(--background-color);
       border: 1px solid var(--accent-color);
       position: relative;
@@ -105,36 +107,56 @@
       .image {
         width: 400px;
         margin-right: var(--outer-margin);
+      }
 
-        img {
-          width: 100%;
-          height: auto;
-          object-fit: cover;
+      .column {
+        width: 50%;
+        // padding-top: 1em;
+
+        &.media {
+          padding-right: var(--inner-margin);
+          img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+          }
+        }
+
+        &.text {
+          overflow-y: auto;
+          padding-right: var(--inner-margin);
+
+          h2 {
+            margin-bottom: 1em;
+          }
+
+          .content {
+            white-space: normal; /* Collapses unnecessary whitespace */
+            overflow-wrap: break-word;
+            hyphens: auto;
+            padding-bottom: 4em;
+          }
         }
       }
 
-      .text {
-        width: calc(100% - 400px);
-
-        h2 {
-          margin-bottom: 1em;
-        }
-
-        .content {
-          white-space: normal; /* Collapses unnecessary whitespace */
-          overflow-wrap: break-word;
-          hyphens: auto;
-          padding-bottom: 4em;
-        }
-      }
-
-      &.textonly {
-        .image {
+      &.hideMedia {
+        .media {
           display: none;
         }
 
         .text {
           width: 100%;
+        }
+      }
+
+      &.hideText {
+        .text {
+          display: none;
+        }
+
+        .media {
+          width: 100%;
+          padding-right: 0;
         }
       }
     }
