@@ -32,6 +32,7 @@ export default {
         },
         {
             title: 'Video url',
+            description: 'URL for vimeo or youtube video',
             name: 'videoUrl',
             type: 'url',
         },

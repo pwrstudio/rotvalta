@@ -10,7 +10,6 @@
   import { renderBlockText, urlFor } from "$lib/modules/sanity"
   import { goto } from "$app/navigation"
   import X from "../Graphics/X.svelte"
-  // import { onDestroy, onMount } from "svelte"
   import VideoPlayer from "../VideoPlayer/VideoPlayer.svelte"
 
   export let page: Page | FieldNote | ArchivalNote | Conversation
@@ -27,19 +26,12 @@
 
   $: hideMedia = page.hideMediaInPopup || (!src && !videoUrl)
   $: hideText = content.length === 0
+  $: isConversation = page._type === "conversation"
 
   function closePopUp(event: MouseEvent) {
     goto(href, { noScroll: true })
     return event
   }
-
-  // onMount(() => {
-  //   disablePageScroll()
-  // })
-
-  // onDestroy(() => {
-  //   enablePageScroll()
-  // })
 </script>
 
 <div
@@ -48,24 +40,27 @@
   on:click={closePopUp}
   in:fade={{ duration: 200 }}
 >
-  <div class="pop-up" class:hideMedia class:hideText>
+  <div class="pop-up" class:hideMedia class:hideText class:isConversation>
     <!-- CLOSE -->
     <a {href} class="close" data-sveltekit-noscroll><X /></a>
 
-    <!-- MEDIA -->
-    <div class="column media">
-      {#if videoUrl}
-        <VideoPlayer {videoUrl} />
-      {:else}
-        <img {src} alt={title} draggable="false" />
-      {/if}
-    </div>
-
-    <!-- TEXT -->
-    <div class="column text">
-      <h2>{title}</h2>
-      <div class="content">{@html renderBlockText(content)}</div>
-    </div>
+    {#if isConversation}
+      <VideoPlayer {videoUrl} />
+    {:else}
+      <!-- MEDIA -->
+      <div class="column media">
+        {#if videoUrl}
+          <VideoPlayer {videoUrl} />
+        {:else}
+          <img {src} alt={title} draggable="false" />
+        {/if}
+      </div>
+      <!-- TEXT -->
+      <div class="column text">
+        <h2>{title}</h2>
+        <div class="content">{@html renderBlockText(content)}</div>
+      </div>
+    {/if}
   </div>
 </div>
 
@@ -120,6 +115,9 @@
             height: auto;
             object-fit: cover;
           }
+          iframe {
+            width: 100%;
+          }
         }
 
         &.text {
@@ -158,6 +156,10 @@
           width: 100%;
           padding-right: 0;
         }
+      }
+
+      &.isConversation {
+        padding-bottom: var(--total-margin);
       }
     }
   }

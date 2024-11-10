@@ -37,6 +37,5 @@
     cursor: pointer;
     line-height: 0;
     position: relative;
-    margin: var(--inner-margin);
   }
 </style>

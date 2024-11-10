@@ -183,6 +183,7 @@ export type FieldNote = {
     crop?: SanityImageCrop
     _type: 'image'
   }
+  videoUrl?: string
   hideMediaInPopup?: boolean
   content_se?: ContentEditor
   content_en?: ContentEditor
@@ -208,6 +209,7 @@ export type ArchivalNote = {
     crop?: SanityImageCrop
     _type: 'image'
   }
+  videoUrl?: string
   hideMediaInPopup?: boolean
   content_se?: ContentEditor
   content_en?: ContentEditor

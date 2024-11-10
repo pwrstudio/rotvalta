@@ -36,6 +36,12 @@ export default {
             type: 'image',
         },
         {
+            title: 'Video url',
+            description: 'URL for vimeo or youtube video. Setting this overrides the main image in the pop up.',
+            name: 'videoUrl',
+            type: 'url',
+        },
+        {
             title: "Hide media in pop-up",
             description: "Toggle this to only show text in the pop-up",
             name: "hideMediaInPopup",
