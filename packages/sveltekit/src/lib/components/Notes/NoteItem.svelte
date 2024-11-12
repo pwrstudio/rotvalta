@@ -12,21 +12,36 @@
     language === LANGUAGE.ENGLISH
       ? `/en/note/${note.slug?.current ?? ""}`
       : `/note/${note.slug?.current ?? ""}`
-  $: src = isPortraitImage(note.mainImage)
-    ? urlFor(note.mainImage).width(200).url()
-    : urlFor(note.mainImage).height(200).url()
+  // $: src = isPortraitImage(note.mainImage)
+  //   ? urlFor(note.mainImage).width(200).url()
+  //   : urlFor(note.mainImage).height(200).url()
+  $: src = urlFor(note.mainImage).width(300).url()
 </script>
 
-<a class="note-item" {href} data-sveltekit-noscroll>
-  <div class="image">
-    <img {src} alt={title} draggable="false" />
-  </div>
+<a class="note-item {note.imageSize}" {href} data-sveltekit-noscroll>
+  <img {src} alt={title} draggable="false" />
 </a>
 
 <style lang="scss">
   .note-item {
     line-height: 0;
     user-select: none;
+    width: 200px;
+
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      max-height: 400px;
+    }
+
+    &.small {
+      width: 150px;
+    }
+
+    &.large {
+      width: 300px;
+    }
 
     &:hover {
       opacity: 0.8;

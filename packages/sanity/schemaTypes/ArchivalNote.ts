@@ -36,6 +36,19 @@ export default {
             type: 'image',
         },
         {
+            title: 'Image size',
+            name: 'imageSize',
+            type: 'string',
+            options: {
+                layout: "radio",
+                list: [
+                    { title: 'Small', value: 'small' },
+                    { title: 'Medium', value: 'medium' },
+                    { title: 'Large', value: 'large' },
+                ],
+            },
+        },
+        {
             title: 'Video url',
             description: 'URL for vimeo or youtube video. Setting this overrides the main image in the pop up.',
             name: 'videoUrl',
