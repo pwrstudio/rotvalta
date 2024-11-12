@@ -5,3 +5,4 @@ import { writable } from 'svelte/store'
 export const languageStore: Writable<LANGUAGE> = writable(LANGUAGE.SWEDISH)
 export const conversationsActive = writable(false)
 export const horizonallyScrolled = writable(false)
+export const showLeftArrow = writable(false)

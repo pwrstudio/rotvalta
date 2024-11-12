@@ -12,6 +12,7 @@
     conversationsActive,
     languageStore,
     horizonallyScrolled,
+    showLeftArrow,
   } from "$lib/stores"
 
   import About from "$lib/components/About/About.svelte"
@@ -42,6 +43,7 @@
   onMount(() => {
     function handleScroll() {
       horizonallyScrolled.set(scrollContainer.scrollLeft > 200)
+      showLeftArrow.set(scrollContainer.scrollLeft > 600)
     }
 
     function preventBackNavigation(event: WheelEvent) {
@@ -71,7 +73,7 @@
   <div class="scroll-container" bind:this={scrollContainer}>
     <About {language} {homepage} />
     <Notes {language} {archivalNotes} {fieldNotes} {labels} />
-    <ScrollIndicator />
+    <ScrollIndicator {scrollContainer} />
   </div>
 </div>
 
