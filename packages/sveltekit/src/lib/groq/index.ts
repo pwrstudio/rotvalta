@@ -9,6 +9,6 @@ export const queries = {
     fieldNoteList: '*[_id == "field-note-list"][0] {..., list[]->{...}}',
     conversationList: '*[_id == "conversation-list"][0] {..., list[]->{...}}',
     singlePage: '*[_type == "page" && slug.current == $slug][0]',
-    singleNote : '*[(_type == "fieldNote" || _type == "archivalNote") && slug.current == $slug][0]',
-    singleConversation: '*[_type == "conversation" && slug.current == $slug][0]'
+    singleNote : '*[(_type == "fieldNote" || _type == "archivalNote") && slug.current == $slug][0]  {..., "audioFileUrl": audioFile.asset->url}',
+    singleConversation: '*[_type == "conversation" && slug.current == $slug][0]',
 }

@@ -9,11 +9,14 @@
   } from "@sanity-types"
   import { renderBlockText, urlFor } from "$lib/modules/sanity"
   import { goto } from "$app/navigation"
-  import X from "../Graphics/X.svelte"
-  import VideoPlayer from "../VideoPlayer/VideoPlayer.svelte"
+  import X from "$lib/components/Graphics/X.svelte"
+  import VideoPlayer from "$lib/components/VideoPlayer/VideoPlayer.svelte"
+  import AudioPlayer from "$lib/components/AudioPlayer/AudioPlayer.svelte"
 
   export let page: Page | FieldNote | ArchivalNote | Conversation
   export let language: LANGUAGE
+
+  console.log(page)
 
   $: title = language === LANGUAGE.ENGLISH ? page.title_en : page.title_se
   $: content =
@@ -29,8 +32,9 @@
   $: isConversation = page._type === "conversation"
 
   function closePopUp(event: MouseEvent) {
-    goto(href, { noScroll: true })
-    return event
+    if (event.target === event.currentTarget) {
+      goto(href, { noScroll: true })
+    }
   }
 </script>
 
@@ -49,7 +53,9 @@
     {:else}
       <!-- MEDIA -->
       <div class="column media">
-        {#if videoUrl}
+        {#if page.audioFileUrl}
+          <AudioPlayer audioFileUrl={page.audioFileUrl} />
+        {:else if videoUrl}
           <VideoPlayer {videoUrl} />
         {:else}
           <img {src} alt={title} draggable="false" />
@@ -106,7 +112,6 @@
 
       .column {
         width: 50%;
-        // padding-top: 1em;
 
         &.media {
           padding-right: var(--inner-margin);
@@ -129,7 +134,7 @@
           }
 
           .content {
-            white-space: normal; /* Collapses unnecessary whitespace */
+            white-space: normal;
             overflow-wrap: break-word;
             hyphens: auto;
             padding-bottom: 4em;

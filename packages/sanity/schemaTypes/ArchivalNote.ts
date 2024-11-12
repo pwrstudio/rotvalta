@@ -42,6 +42,15 @@ export default {
             type: 'url',
         },
         {
+            title: 'Audio file (mp3 format)',
+            description: 'Setting this overrides the main image in the pop up.',
+            name: 'audioFile',
+            type: 'file',
+            options: {
+                accept: 'audio/*',
+            }
+        },
+        {
             title: "Hide media in pop-up",
             description: "Toggle this to only show text in the pop-up",
             name: "hideMediaInPopup",
