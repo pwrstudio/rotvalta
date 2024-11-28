@@ -114,7 +114,8 @@
         width: 50%;
 
         &.media {
-          padding-right: var(--inner-margin);
+          margin-right: var(--total-margin);
+
           img {
             width: 100%;
             height: auto;
