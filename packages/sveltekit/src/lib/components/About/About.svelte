@@ -40,6 +40,8 @@
 </div>
 
 <style lang="scss">
+  @import "../../styles/index.scss";
+
   .about {
     height: 100%;
     margin-right: var(--total-margin);
@@ -50,6 +52,11 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    @include screen-size("phone") {
+      background: red;
+      height: auto;
+    }
 
     .title {
       margin-bottom: 2em;

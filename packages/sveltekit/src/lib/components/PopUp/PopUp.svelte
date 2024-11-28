@@ -19,6 +19,7 @@
   console.log(page)
 
   function replaceNbspInText(array) {
+    if (!array) return []
     return array.map(item => {
       if (item.children && Array.isArray(item.children)) {
         item.children = item.children.map(child => {

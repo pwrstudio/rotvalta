@@ -28,6 +28,8 @@
 </div>
 
 <style lang="scss">
+  @import "../../styles/index.scss";
+
   .conversations-container {
     border-top: 1px solid var(--accent-color);
     padding-inline: var(--total-margin);
@@ -36,17 +38,36 @@
     display: inline-flex;
     padding-bottom: var(--double-total-margin);
 
+    @include screen-size("phone") {
+      flex-wrap: wrap;
+      height: auto;
+    }
+
     .column {
       width: 50%;
       height: 100%;
 
+      @include screen-size("phone") {
+        width: 100%;
+        height: auto;
+      }
+
       &.first {
         border-right: 1px solid var(--accent-color);
         padding-right: var(--total-margin);
+
+        @include screen-size("phone") {
+          border-right: unset;
+          padding-right: 0;
+        }
       }
 
       &.second {
         padding-left: var(--total-margin);
+
+        @include screen-size("phone") {
+          padding-left: 0;
+        }
       }
     }
   }
