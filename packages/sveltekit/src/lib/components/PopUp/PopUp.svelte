@@ -7,7 +7,7 @@
     ArchivalNote,
     Conversation,
   } from "@sanity-types"
-  import { renderBlockText, urlFor } from "$lib/modules/sanity"
+  import { renderBlockText, toPlainText, urlFor } from "$lib/modules/sanity"
   import { goto } from "$app/navigation"
   import X from "$lib/components/Graphics/X.svelte"
   import VideoPlayer from "$lib/components/VideoPlayer/VideoPlayer.svelte"
@@ -18,18 +18,35 @@
 
   console.log(page)
 
+  function replaceNbspInText(array) {
+    return array.map(item => {
+      if (item.children && Array.isArray(item.children)) {
+        item.children = item.children.map(child => {
+          if (child.text && typeof child.text === "string") {
+            child.text = child.text.replace(/\u00A0/g, " ") // Replace non-breaking space with a regular space
+          }
+          return child
+        })
+      }
+      return item
+    })
+  }
+
   $: title = language === LANGUAGE.ENGLISH ? page.title_en : page.title_se
   $: content =
     language === LANGUAGE.ENGLISH
-      ? (page.content_en?.content ?? [])
-      : (page.content_se?.content ?? [])
+      ? (replaceNbspInText(page.content_en?.content) ?? [])
+      : (replaceNbspInText(page.content_se?.content) ?? [])
   $: href = language === LANGUAGE.ENGLISH ? "/en" : "/"
   $: src = page.mainImage ? urlFor(page.mainImage).height(600).url() : ""
   $: videoUrl = page?.videoUrl ?? ""
 
   $: hideMedia = page.hideMediaInPopup || (!src && !videoUrl)
-  $: hideText = content.length === 0
+  $: hideText = content.length === 0 || !toPlainText(content).trim()
   $: isConversation = page._type === "conversation"
+
+  $: console.log("content", content)
+  $: console.log("hideText", hideText)
 
   function closePopUp(event: MouseEvent) {
     if (event.target === event.currentTarget) {
@@ -84,11 +101,10 @@
     background: rgba(255, 255, 255, 0.8);
 
     .pop-up {
-      width: 80ch;
+      width: 1200px;
       max-width: 90vw;
-      max-height: 90vh;
+      max-height: 70vh;
       padding: var(--total-margin);
-      padding-bottom: 0;
       background: var(--background-color);
       border: 1px solid var(--accent-color);
       position: relative;
@@ -115,20 +131,21 @@
 
         &.media {
           margin-right: var(--total-margin);
+          line-height: 0;
+          max-height: 100%;
 
           img {
-            width: 100%;
-            height: auto;
-            object-fit: cover;
-          }
-          iframe {
-            width: 100%;
+            line-height: 0;
+            max-width: 100%;
+            max-height: 100%;
           }
         }
 
         &.text {
           overflow-y: auto;
           padding-right: var(--inner-margin);
+          position: relative;
+          top: -5px;
 
           h2 {
             margin-bottom: 1em;
@@ -138,7 +155,6 @@
             white-space: normal;
             overflow-wrap: break-word;
             hyphens: auto;
-            padding-bottom: 4em;
           }
         }
       }
@@ -154,13 +170,17 @@
       }
 
       &.hideText {
+        width: 600px;
+
         .text {
           display: none;
         }
 
         .media {
           width: 100%;
+          width: auto;
           padding-right: 0;
+          margin-right: 0;
         }
       }
 

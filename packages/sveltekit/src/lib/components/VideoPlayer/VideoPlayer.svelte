@@ -31,9 +31,8 @@
 
 <style lang="scss">
   .video-player {
-    background: var(--accent-color);
     width: 100%;
-    aspect-ratio: 16/9;
+    aspect-ratio: 4/3;
     cursor: pointer;
     line-height: 0;
     position: relative;
