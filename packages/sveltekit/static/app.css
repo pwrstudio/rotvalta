@@ -64,6 +64,7 @@ body, html {
     font-size: var(--font-size-normal);
     scroll-behavior: smooth;
     overflow-x: hidden;
+    overscroll-behavior: none;
 }
 
 h1 {
