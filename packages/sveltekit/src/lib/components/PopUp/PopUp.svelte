@@ -75,6 +75,8 @@
 </div>
 
 <style lang="scss">
+  @import "../../styles/index.scss";
+
   .pop-up-container {
     position: fixed;
     z-index: var(--z-modal);
@@ -97,6 +99,15 @@
       position: relative;
       display: flex;
 
+      @include screen-size("phone") {
+        height: 100vh;
+        width: 100vw;
+        max-width: 100vw;
+        max-height: 100vh;
+        border: none;
+        flex-direction: column;
+      }
+
       .close {
         position: absolute;
         top: 5px;
@@ -111,6 +122,10 @@
       .column {
         width: 50%;
 
+        @include screen-size("phone") {
+          width: 100%;
+        }
+
         &.media {
           margin-right: var(--total-margin);
           line-height: 0;
@@ -120,6 +135,10 @@
             line-height: 0;
             max-width: 100%;
             max-height: 100%;
+          }
+
+          @include screen-size("phone") {
+            margin-bottom: var(--total-margin);
           }
         }
 
@@ -144,9 +163,15 @@
       &.only-text {
         width: 70ch;
 
+        @include screen-size("phone") {
+          height: 100vh;
+          width: 100vw;
+        }
+
         .media {
           display: none;
         }
+
         .text {
           width: 100%;
         }
@@ -156,6 +181,12 @@
         width: auto;
         display: inline-block;
         max-height: 80vh;
+
+        @include screen-size("phone") {
+          max-height: 100vh;
+          height: 100vh;
+          width: 100vw;
+        }
 
         .text {
           display: none;

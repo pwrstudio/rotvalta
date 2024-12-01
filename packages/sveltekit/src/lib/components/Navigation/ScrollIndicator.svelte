@@ -53,6 +53,8 @@
 {/if}
 
 <style lang="scss">
+  @import "../../styles/index.scss";
+
   .scroll-indicator {
     position: absolute;
     pointer-events: auto;
@@ -66,6 +68,10 @@
     background: transparent;
     border: 0;
     outline: none;
+
+    @include screen-size("phone") {
+      top: 75%;
+    }
 
     &.right {
       right: -50px;

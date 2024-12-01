@@ -32,6 +32,8 @@
 </div>
 
 <style lang="scss">
+  @import "../../styles/index.scss";
+
   .nav-bar {
     position: absolute;
     bottom: var(--total-margin);
@@ -40,6 +42,10 @@
     display: flex;
     justify-content: space-between;
     z-index: var(--z-nav);
+
+    @include screen-size("phone") {
+      display: none;
+    }
 
     .pages {
       display: flex;

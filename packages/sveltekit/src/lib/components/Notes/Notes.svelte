@@ -50,6 +50,8 @@
 </div>
 
 <style lang="scss">
+  @import "../../styles/index.scss";
+
   .notes {
     height: 100vh;
     position: relative;

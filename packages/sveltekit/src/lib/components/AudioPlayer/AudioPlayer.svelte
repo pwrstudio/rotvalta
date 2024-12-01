@@ -141,7 +141,6 @@
   }
 
   .time-code {
-    background: red;
     position: relative;
     top: -3px;
   }

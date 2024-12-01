@@ -16,11 +16,13 @@
   } from "$lib/stores"
 
   import About from "$lib/components/About/About.svelte"
+  import AboutPhone from "$lib/components/About/AboutPhone.svelte"
   import Notes from "$lib/components/Notes/Notes.svelte"
   import Conversations from "$lib/components/Conversations/Conversations.svelte"
   import LanguageSwitch from "$lib/components/LanguageSwitch/LanguageSwitch.svelte"
   import NavBar from "$lib/components/Navigation/NavBar.svelte"
   import ScrollIndicator from "$lib/components/Navigation/ScrollIndicator.svelte"
+  import PhoneMenu from "$lib/components/Navigation/PhoneMenu.svelte"
 
   let scrollContainer: HTMLDivElement
 
@@ -67,10 +69,14 @@
   })
 </script>
 
+<PhoneMenu {language} {pages} {labels} />
+
 <div class="above-fold">
   <LanguageSwitch {language} />
   <NavBar {language} {pages} {labels} />
-  <div class="scroll-container" bind:this={scrollContainer}>
+  <AboutPhone {language} {homepage} />
+
+  <div id="notes" class="scroll-container" bind:this={scrollContainer}>
     <About {language} {homepage} />
     <Notes {language} {archivalNotes} {fieldNotes} {labels} />
     <ScrollIndicator {scrollContainer} />
@@ -86,17 +92,29 @@
 <slot />
 
 <style lang="scss">
+  @import "../lib/styles/index.scss";
+
   .above-fold {
     height: 100vh;
     width: 100vw;
     position: relative;
     overflow: hidden;
 
+    @include screen-size("phone") {
+      flex-wrap: wrap;
+      height: 200vh;
+    }
+
     .scroll-container {
       display: flex;
       flex-wrap: nowrap;
       overflow-y: hidden;
       height: 100vh;
+
+      @include screen-size("phone") {
+        flex-wrap: wrap;
+        height: 200vh;
+      }
     }
   }
 

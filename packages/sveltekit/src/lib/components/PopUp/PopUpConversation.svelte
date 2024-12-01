@@ -38,6 +38,8 @@
 </div>
 
 <style lang="scss">
+  @import "../../styles/index.scss";
+
   .pop-up-container {
     position: fixed;
     z-index: var(--z-modal);
@@ -59,6 +61,14 @@
       border: 1px solid var(--accent-color);
       position: relative;
       display: flex;
+
+      @include screen-size("phone") {
+        height: 100vh;
+        width: 100vw;
+        max-width: 100vw;
+        max-height: 100vh;
+        border: none;
+      }
 
       .close {
         position: absolute;

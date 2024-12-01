@@ -49,6 +49,7 @@
     /* Z-index */
     --z-nav: 100;
     --z-modal: 1000;
+    --z-phone-nav: 10000;
 }
 
 * {
@@ -85,4 +86,11 @@ p:first-child {
 
 p:last-child {
     margin-bottom: 0;
+}
+
+button {
+  background: transparent;
+  border: none;
+  font-size: var(--font-size-normal);
+  font-family: var(--font-family-normal)
 }

@@ -48,13 +48,17 @@
     width: 50ch;
     padding-inline: var(--total-margin);
     flex-shrink: 0;
-    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
+    display: none;
+
     @include screen-size("phone") {
-      display: none;
+      height: 100vh;
+      width: 100vw;
+      display: flex;
+      border-bottom: 1px solid var(--accent-color);
     }
 
     .title {
