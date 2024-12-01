@@ -95,7 +95,7 @@
     .scroll-container {
       display: flex;
       flex-wrap: nowrap;
-      overflow-y: auto;
+      overflow-y: hidden;
       height: 100vh;
     }
   }

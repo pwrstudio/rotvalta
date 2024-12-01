@@ -31,15 +31,27 @@ export default {
             validation: (Rule: any) => Rule.required()
         },
         {
+            title: 'Main image',
+            name: 'mainImage',
+            type: 'image',
+        },
+        {
             title: 'Video url',
             description: 'URL for vimeo or youtube video',
             name: 'videoUrl',
             type: 'url',
         },
         {
-            title: 'Main image',
-            name: 'mainImage',
-            type: 'image',
+            title: 'Video aspect ratio',
+            name: 'videoAspectRatio',
+            type: 'string',
+            options: {
+                layout: "radio",
+                list: [
+                    { title: '16:9', value: '16-9' },
+                    { title: '4:3', value: '4-3' },
+                ],
+            }
         },
         {
             title: 'Content (Swedish)',

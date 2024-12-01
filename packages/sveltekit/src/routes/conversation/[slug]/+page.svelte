@@ -4,7 +4,7 @@
   import { languageStore } from "$lib/stores"
   languageStore.set(LANGUAGE.SWEDISH)
 
-  import PopUp from "$lib/components/PopUp/PopUp.svelte"
+  import PopUpConversation from "$lib/components/PopUp/PopUpConversation.svelte"
 
   export let data: {
     conversation: Conversation
@@ -12,8 +12,6 @@
 
   $: conversation = data.conversation
   $: language = $languageStore
-
-  $: console.log("conversation", conversation)
 </script>
 
-<PopUp page={conversation} {language} />
+<PopUpConversation page={conversation} {language} />

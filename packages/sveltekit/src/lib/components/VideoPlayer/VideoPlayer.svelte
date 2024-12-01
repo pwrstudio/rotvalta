@@ -2,6 +2,7 @@
   import getVideoId from "get-video-id"
 
   export let videoUrl: string
+  export let aspectRatio: string
 
   const postfix = ""
 
@@ -25,16 +26,24 @@
   let videoEmbedCode = generateEmbedCode(videoUrl ?? "")
 </script>
 
-<div class="video-player">
+<div class="video-player {'ratio-' + aspectRatio}">
   {@html videoEmbedCode}
 </div>
 
 <style lang="scss">
   .video-player {
     width: 100%;
-    aspect-ratio: 4/3;
+    aspect-ratio: 16/9;
     cursor: pointer;
     line-height: 0;
     position: relative;
+
+    &.ratio-16-9 {
+      aspect-ratio: 16/9;
+    }
+
+    &.ratio-4-3 {
+      aspect-ratio: 4/3;
+    }
   }
 </style>

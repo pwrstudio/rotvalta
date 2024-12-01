@@ -2,7 +2,6 @@
   import type { ArchivalNote, FieldNote } from "@sanity-types"
   import { LANGUAGE } from "$lib/enums"
   import { urlFor } from "$lib/modules/sanity"
-  import { isPortraitImage } from "$lib/modules/utils"
 
   export let language: LANGUAGE
   export let note: FieldNote | ArchivalNote
@@ -12,9 +11,6 @@
     language === LANGUAGE.ENGLISH
       ? `/en/note/${note.slug?.current ?? ""}`
       : `/note/${note.slug?.current ?? ""}`
-  // $: src = isPortraitImage(note.mainImage)
-  //   ? urlFor(note.mainImage).width(200).url()
-  //   : urlFor(note.mainImage).height(200).url()
   $: src = urlFor(note.mainImage).width(300).url()
 </script>
 
@@ -40,7 +36,7 @@
     }
 
     &.large {
-      width: 300px;
+      width: 250px;
     }
 
     &:hover {
