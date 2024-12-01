@@ -36,7 +36,7 @@
     }
 
     &.large {
-      width: 250px;
+      width: 240px;
     }
 
     &:hover {

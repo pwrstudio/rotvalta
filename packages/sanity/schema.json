@@ -986,6 +986,13 @@
         },
         "optional": true
       },
+      "audioTitle": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "string"
+        },
+        "optional": true
+      },
       "content_se": {
         "type": "objectAttribute",
         "value": {
@@ -1247,6 +1254,13 @@
         },
         "optional": true
       },
+      "audioTitle": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "string"
+        },
+        "optional": true
+      },
       "content_se": {
         "type": "objectAttribute",
         "value": {
@@ -1484,6 +1498,13 @@
               }
             }
           }
+        },
+        "optional": true
+      },
+      "audioTitle": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "string"
         },
         "optional": true
       },

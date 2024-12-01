@@ -64,10 +64,10 @@
         position: absolute;
         top: 5px;
         right: 5px;
-        color: var(--foreground-color);
+        color: var(--accent-color);
 
         &:hover {
-          color: var(--accent-color);
+          color: var(--foreground-color);
         }
       }
 

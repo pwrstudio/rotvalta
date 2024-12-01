@@ -88,6 +88,12 @@ export default {
             hidden: ({document}) => !['audio', 'audio-and-image'].includes(document?.layout ?? "")
         },
         {
+            title: "Audio title",
+            name: "audioTitle",
+            type: "string",
+            hidden: ({document}) => !['audio', 'audio-and-image'].includes(document?.layout ?? "")
+        },
+        {
             title: 'Content (Swedish)',
             name: 'content_se',
             type: 'contentEditor',

@@ -175,6 +175,7 @@ export type FieldNote = {
     }
     _type: 'file'
   }
+  audioTitle?: string
   content_se?: ContentEditor
   content_en?: ContentEditor
   slug?: Slug
@@ -212,6 +213,7 @@ export type ArchivalNote = {
     }
     _type: 'file'
   }
+  audioTitle?: string
   content_se?: ContentEditor
   content_en?: ContentEditor
   slug?: Slug
@@ -248,6 +250,7 @@ export type Page = {
     }
     _type: 'file'
   }
+  audioTitle?: string
   content_se?: ContentEditor
   content_en?: ContentEditor
   slug?: Slug

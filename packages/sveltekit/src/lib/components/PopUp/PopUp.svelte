@@ -53,11 +53,11 @@
     <div class="column media">
       <!-- AUDIO -->
       {#if page.layout == "audio"}
-        <AudioPlayer audioFileUrl={page.audioFileUrl} />
+        <AudioPlayer audioFileUrl={page.audioFileUrl} title={page.audioTitle} />
         <!-- AUDIO AND IMAGE -->
       {:else if page.layout === "audio-and-image"}
         <img {src} alt={title} draggable="false" />
-        <AudioPlayer audioFileUrl={page.audioFileUrl} />
+        <AudioPlayer audioFileUrl={page.audioFileUrl} title={page.audioTitle} />
         <!-- VIDEO -->
       {:else if page.layout === "video" && videoUrl}
         <VideoPlayer {videoUrl} aspectRatio={page.videoAspectRatio ?? "16-9"} />
@@ -101,10 +101,10 @@
         position: absolute;
         top: 5px;
         right: 5px;
-        color: var(--foreground-color);
+        color: var(--accent-color);
 
         &:hover {
-          color: var(--accent-color);
+          color: var(--foreground-color);
         }
       }
 
