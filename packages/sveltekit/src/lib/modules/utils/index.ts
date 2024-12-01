@@ -30,3 +30,7 @@ export function replaceNbspInText(array: any[]) {
         return item
     })
 }
+
+export const stripHtml = (html: string): string => {
+    return html.replace(/<[^>]*>/g, '');
+}

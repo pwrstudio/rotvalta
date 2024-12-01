@@ -5,6 +5,7 @@
   languageStore.set(LANGUAGE.ENGLISH)
 
   import PopUpConversation from "$lib/components/PopUp/PopUpConversation.svelte"
+  import Metadata from "$lib/components/Metadata/Metadata.svelte"
 
   export let data: {
     conversation: Conversation
@@ -14,4 +15,5 @@
   $: language = $languageStore
 </script>
 
+<Metadata page={conversation} {language} />
 <PopUpConversation page={conversation} {language} />

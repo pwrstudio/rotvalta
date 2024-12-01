@@ -13,8 +13,6 @@
   export let page: FieldNote | ArchivalNote | Page
   export let language: LANGUAGE
 
-  console.log(page)
-
   // Title
   $: title = language === LANGUAGE.ENGLISH ? page.title_en : page.title_se
 
