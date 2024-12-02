@@ -75,10 +75,18 @@
 
     &.right {
       right: -50px;
+
+      @include screen-size("phone") {
+        right: -25px;
+      }
     }
 
     &.left {
       left: -50px;
+
+      @include screen-size("phone") {
+        left: -25px;
+      }
     }
   }
 </style>

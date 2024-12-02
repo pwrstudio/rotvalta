@@ -8,7 +8,17 @@
 </svg>
 
 <style lang="scss">
+  @import "../../styles/index.scss";
+
   svg {
+    width: 200px;
+    height: 200px;
+
+    @include screen-size("phone") {
+      width: 100px;
+      height: 100px;
+    }
+
     polyline {
       stroke: currentColor;
       stroke-width: 4;
