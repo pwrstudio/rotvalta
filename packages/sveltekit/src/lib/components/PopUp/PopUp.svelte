@@ -104,6 +104,7 @@
         max-height: 100vh;
         border: none;
         flex-direction: column;
+        padding-top: 60px;
       }
 
       .close {
@@ -111,6 +112,11 @@
         top: 5px;
         right: 5px;
         color: var(--accent-color);
+
+        @include screen-size("phone") {
+          top: 15px;
+          right: 20px;
+        }
 
         &:hover {
           color: var(--foreground-color);
