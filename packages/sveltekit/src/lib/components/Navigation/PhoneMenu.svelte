@@ -5,6 +5,7 @@
 
   import X from "$lib/components/Graphics/X.svelte"
   import MenuItem from "$lib/components/Navigation/MenuItem.svelte"
+  import Hamburger from "$lib/components/Graphics/Hamburger.svelte"
 
   export let language: LANGUAGE
   export let pages: Page[]
@@ -45,7 +46,9 @@
   </div>
 {:else}
   <!-- OPEN MENU BUTTON -->
-  <button class="menu-toggle" on:click={toggleMenu}>Menu</button>
+  <button class="menu-toggle" on:click={toggleMenu}>
+    <Hamburger />
+  </button>
 {/if}
 
 <style lang="scss">
@@ -54,9 +57,14 @@
   .menu-toggle {
     position: fixed;
     z-index: var(--z-nav);
-    top: 20px;
+    top: 15px;
     right: 20px;
     display: none;
+    color: var(--foreground-color);
+
+    &:hover {
+      color: var(--accent-color);
+    }
 
     @include screen-size("phone") {
       display: block;
@@ -79,8 +87,8 @@
 
     .close {
       position: fixed;
-      right: 10px;
-      top: 10px;
+      top: 15px;
+      right: 20px;
     }
 
     .inner {
