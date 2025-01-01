@@ -1,6 +1,5 @@
 <script lang="ts">
   import { LANGUAGE } from "$lib/enums"
-  import { fade } from "svelte/transition"
   import type { Conversation } from "@sanity-types"
   import { goto } from "$app/navigation"
 
@@ -23,12 +22,7 @@
   }
 </script>
 
-<div
-  role="presentation"
-  class="pop-up-container"
-  on:click={closePopUp}
-  in:fade={{ duration: 200 }}
->
+<div role="presentation" class="pop-up-container" on:click={closePopUp}>
   <div class="pop-up">
     <!-- CLOSE -->
     <a {href} class="close" data-sveltekit-noscroll><X /></a>

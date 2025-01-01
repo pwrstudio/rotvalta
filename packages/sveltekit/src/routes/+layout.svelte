@@ -110,11 +110,6 @@
       flex-wrap: nowrap;
       overflow-y: hidden;
       height: 100vh;
-
-      @include screen-size("phone") {
-        flex-wrap: wrap;
-        height: 200vh;
-      }
     }
   }
 

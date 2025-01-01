@@ -22,15 +22,9 @@
   }
 </script>
 
-{#if directHref}
-  <button class="page-link" on:click={navigate} data-sveltekit-noscroll>
-    {directTitle}
-  </button>
-{:else}
-  <button class="page-link" on:click={navigate} data-sveltekit-noscroll>
-    {title}
-  </button>
-{/if}
+<button class="page-link" on:click={navigate} data-sveltekit-noscroll>
+  {directTitle ?? title}
+</button>
 
 <style lang="scss">
   .page-link {

@@ -1,6 +1,5 @@
 <script lang="ts">
   import { LANGUAGE } from "$lib/enums"
-  import { fade } from "svelte/transition"
   import type { FieldNote, ArchivalNote, Page } from "@sanity-types"
   import { renderBlockText, urlFor } from "$lib/modules/sanity"
   import { goto } from "$app/navigation"
@@ -40,12 +39,7 @@
   }
 </script>
 
-<div
-  role="presentation"
-  class="pop-up-container"
-  on:click={closePopUp}
-  in:fade={{ duration: 200 }}
->
+<div role="presentation" class="pop-up-container" on:click={closePopUp}>
   <div class="pop-up {page?.layout ?? ''}">
     <!-- CLOSE -->
     <a {href} class="close" data-sveltekit-noscroll><X /></a>
