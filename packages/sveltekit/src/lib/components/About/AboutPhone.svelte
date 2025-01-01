@@ -3,6 +3,7 @@
   import type { Homepage } from "@sanity-types"
   import { renderBlockText } from "$lib/modules/sanity"
   import Logos from "$lib/components/About/Logos.svelte"
+  import ArrowDown from "../Graphics/ArrowDown.svelte"
 
   export let language: LANGUAGE
   export let homepage: Homepage
@@ -37,6 +38,10 @@
       <Logos logos={homepage.logos} />
     </div>
   </div>
+
+  <div class="arrow-down">
+    <ArrowDown />
+  </div>
 </div>
 
 <style lang="scss">
@@ -47,10 +52,11 @@
     margin-right: var(--total-margin);
     width: 50ch;
     padding-inline: var(--total-margin);
-    flex-shrink: 0;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    // flex-shrink: 0;
+    // flex-direction: column;
+    // justify-content: center;
+    // align-items: center;
+    position: relative;
 
     display: none;
 
@@ -59,6 +65,10 @@
       width: 100vw;
       display: flex;
       border-bottom: 1px solid var(--accent-color);
+    }
+
+    .inner {
+      margin-top: 8em;
     }
 
     .title {
@@ -78,6 +88,14 @@
       .read-more {
         float: right;
       }
+    }
+
+    .arrow-down {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      color: var(--accent-color);
     }
   }
 </style>
