@@ -10,7 +10,9 @@
   import VideoPlayer from "$lib/components/VideoPlayer/VideoPlayer.svelte"
   import AudioPlayer from "$lib/components/AudioPlayer/AudioPlayer.svelte"
 
-  export let page: FieldNote | ArchivalNote | Page
+  export let page: (FieldNote | ArchivalNote | Page) & {
+    audioFileUrl?: string
+  }
   export let language: LANGUAGE
 
   // Title
@@ -48,14 +50,20 @@
     <!-- CLOSE -->
     <a {href} class="close" data-sveltekit-noscroll><X /></a>
     <!-- MEDIA -->
-    <div class="column media">
+    <div class="column media {page?.layout ?? ''}">
       <!-- AUDIO -->
       {#if page.layout == "audio"}
-        <AudioPlayer audioFileUrl={page.audioFileUrl} title={page.audioTitle} />
+        <AudioPlayer
+          audioFileUrl={page.audioFileUrl ?? ""}
+          title={page.audioTitle}
+        />
         <!-- AUDIO AND IMAGE -->
       {:else if page.layout === "audio-and-image"}
         <img {src} alt={title} draggable="false" />
-        <AudioPlayer audioFileUrl={page.audioFileUrl} title={page.audioTitle} />
+        <AudioPlayer
+          audioFileUrl={page.audioFileUrl ?? ""}
+          title={page.audioTitle}
+        />
         <!-- VIDEO -->
       {:else if page.layout === "video" && videoUrl}
         <VideoPlayer {videoUrl} aspectRatio={page.videoAspectRatio ?? "16-9"} />
@@ -90,12 +98,20 @@
     .pop-up {
       width: 1200px;
       max-width: 90vw;
-      max-height: 70vh;
+      max-height: 90vh;
       padding: var(--total-margin);
       background: var(--background-color);
       border: 1px solid var(--accent-color);
       position: relative;
       display: flex;
+
+      width: auto;
+
+      @include screen-size("phone") {
+        display: block;
+        overflow-y: auto;
+        padding-bottom: 10em;
+      }
 
       @include screen-size("phone") {
         height: 100vh;
@@ -114,6 +130,7 @@
         color: var(--accent-color);
 
         @include screen-size("phone") {
+          position: fixed;
           top: 15px;
           right: 20px;
         }
@@ -139,6 +156,19 @@
             line-height: 0;
             max-width: 100%;
             max-height: 100%;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+          }
+
+          &.audio-and-image {
+            img {
+              max-height: calc(100% - 80px);
+
+              @include screen-size("phone") {
+                max-height: 400px;
+              }
+            }
           }
 
           @include screen-size("phone") {
@@ -151,6 +181,10 @@
           padding-right: var(--inner-margin);
           position: relative;
           top: -5px;
+
+          @include screen-size("phone") {
+            overflow-y: unset;
+          }
 
           h2 {
             margin-bottom: 1em;
