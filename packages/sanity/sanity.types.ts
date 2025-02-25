@@ -163,7 +163,16 @@ export type FieldNote = {
     _type: 'image'
   }
   imageSize?: 'small' | 'medium' | 'large'
-  layout?: 'text-and-image' | 'only-image' | 'only-text' | 'video' | 'audio' | 'audio-and-image'
+  layout?:
+    | 'text-and-image'
+    | 'only-image'
+    | 'only-text'
+    | 'video'
+    | 'video-and-text'
+    | 'audio'
+    | 'audio-and-text'
+    | 'audio-and-image'
+    | 'audio-image-and-text'
   videoUrl?: string
   videoAspectRatio?: '16-9' | '4-3'
   audioFile?: {
@@ -201,7 +210,16 @@ export type ArchivalNote = {
     _type: 'image'
   }
   imageSize?: 'small' | 'medium' | 'large'
-  layout?: 'text-and-image' | 'only-image' | 'only-text' | 'video' | 'audio' | 'audio-and-image'
+  layout?:
+    | 'text-and-image'
+    | 'only-image'
+    | 'only-text'
+    | 'video'
+    | 'video-and-text'
+    | 'audio'
+    | 'audio-and-text'
+    | 'audio-and-image'
+    | 'audio-image-and-text'
   videoUrl?: string
   videoAspectRatio?: '16-9' | '4-3'
   audioFile?: {
@@ -381,7 +399,7 @@ export type ContentEditor = {
       _type: 'span'
       _key: string
     }>
-    style?: 'normal'
+    style?: 'normal' | 'reference'
     listItem?: 'bullet' | 'number'
     markDefs?: Array<{
       href?: string

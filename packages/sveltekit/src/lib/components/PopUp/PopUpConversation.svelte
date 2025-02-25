@@ -48,7 +48,7 @@
 
     .pop-up {
       width: 800px;
-      max-width: 90vw;
+      max-width: 75vw;
       max-height: 70vh;
       padding: var(--total-margin);
       background: var(--background-color);

@@ -69,8 +69,11 @@ export default {
                     { title: 'Only image', value: 'only-image' },
                     { title: 'Only text', value: 'only-text' },
                     { title: 'Video', value: 'video' },
+                    { title: 'Video and text', value: 'video-and-text' },
                     { title: 'Audio', value: 'audio' },
-                    { title: 'Audio and image', value: 'audio-and-image' }
+                    { title: 'Audio and text', value: 'audio-and-text' },
+                    { title: 'Audio and image', value: 'audio-and-image' },
+                    { title: 'Audio, image and text', value: 'audio-image-and-text' }
                 ],
             },
             validation: (Rule: any) => Rule.required()

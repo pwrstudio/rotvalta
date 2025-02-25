@@ -31,12 +31,20 @@
 </div>
 
 <style lang="scss">
+  @import "../../styles/index.scss";
+
   .video-player {
-    width: 100%;
+    width: 720px;
+    max-width: 60vw;
     aspect-ratio: 16/9;
     cursor: pointer;
     line-height: 0;
     position: relative;
+
+    @include screen-size("phone") {
+      max-width: unset;
+      width: 80vw;
+    }
 
     &.ratio-16-9 {
       aspect-ratio: 16/9;

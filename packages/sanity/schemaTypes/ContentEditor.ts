@@ -1,3 +1,5 @@
+import { ReferenceDecorator } from './decorators'
+
 export default {
     type: 'object',
     name: 'contentEditor',
@@ -12,6 +14,7 @@ export default {
                     type: 'block',
                     styles: [
                         { title: 'Normal', value: 'normal' },
+                        { title: 'Reference', value: 'reference', component: ReferenceDecorator }
                     ],
                     marks: {
                         decorators: [

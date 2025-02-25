@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { onMount } from "svelte"
   import { LANGUAGE } from "$lib/enums"
   import type { FieldNote, ArchivalNote, Page } from "@sanity-types"
   import { renderBlockText, urlFor } from "$lib/modules/sanity"
@@ -40,38 +39,74 @@
   }
 </script>
 
+<!-- layout?:
+| 'text-and-image'
+| 'only-image'
+| 'only-text'
+| 'video'
+| 'video-and-text'
+| 'audio'
+| 'audio-and-text'
+| 'audio-and-image'
+| 'audio-image-and-text' -->
+
 <div role="presentation" class="pop-up-container" on:click={closePopUp}>
   <div class="pop-up {page?.layout ?? ''}">
-    <!-- CLOSE -->
     <a {href} class="close" data-sveltekit-noscroll><X /></a>
-    <!-- MEDIA -->
-    <div class="column media {page?.layout ?? ''}">
-      <!-- AUDIO -->
-      {#if page.layout == "audio"}
-        <AudioPlayer
-          audioFileUrl={page.audioFileUrl ?? ""}
-          title={page.audioTitle}
-        />
-        <!-- AUDIO AND IMAGE -->
-      {:else if page.layout === "audio-and-image"}
-        <img {src} alt={title} draggable="false" />
-        <AudioPlayer
-          audioFileUrl={page.audioFileUrl ?? ""}
-          title={page.audioTitle}
-        />
-        <!-- VIDEO -->
-      {:else if page.layout === "video" && videoUrl}
-        <VideoPlayer {videoUrl} aspectRatio={page.videoAspectRatio ?? "16-9"} />
-        <!-- TEXT AND IMAGE / ONLY IMAGE / ONLY TEXT -->
-      {:else}
-        <img {src} alt={title} draggable="false" />
-      {/if}
-    </div>
-    <!-- TEXT -->
-    <div class="column text">
-      <h2>{title}</h2>
-      <div class="content">{@html renderBlockText(content)}</div>
-    </div>
+    
+    <!-- MEDIA COLUMN -->
+    {#if page?.layout !== 'only-text'}
+      <div class="column media">
+        <!-- Video layouts -->
+        <!-- 
+          | 'video'
+          | 'video-and-text' 
+        -->
+        {#if page?.layout?.includes('video') && videoUrl}
+          <VideoPlayer {videoUrl} aspectRatio={page.videoAspectRatio ?? "16-9"} />
+        {/if}
+        
+        <!-- Image layouts -->
+        <!--
+          | 'text-and-image'
+          | 'only-image'
+          | 'audio-and-image'
+          | 'audio-image-and-text'
+        -->
+        {#if page?.layout?.includes('image')}
+          <img {src} alt={title} draggable="false" />
+        {/if}
+        
+        <!-- Audio layouts -->
+        <!--
+          | 'audio'
+          | 'audio-and-text'
+          | 'audio-and-image'
+          | 'audio-image-and-text'
+        -->
+        {#if page?.layout?.includes('audio')}
+          <AudioPlayer
+            audioFileUrl={page.audioFileUrl ?? ""}
+            title={page.audioTitle}
+          />
+        {/if}
+      </div>
+    {/if}
+
+    <!-- TEXT COLUMN -->
+    <!--
+      | 'text-and-image'
+      | 'only-text'
+      | 'video-and-text'
+      | 'audio-and-text'
+      | 'audio-image-and-text' 
+    -->
+    {#if page?.layout?.includes('text')}
+      <div class="column text">
+        <h2>{title}</h2>
+        <div class="content">{@html renderBlockText(content)}</div>
+      </div>
+    {/if}
   </div>
 </div>
 
@@ -92,14 +127,13 @@
 
     .pop-up {
       width: 1200px;
-      max-width: 90vw;
+      max-width: 75vw;
       max-height: 90vh;
       padding: var(--total-margin);
       background: var(--background-color);
       border: 1px solid var(--accent-color);
       position: relative;
       display: flex;
-
       width: auto;
 
       @include screen-size("phone") {
@@ -187,8 +221,8 @@
 
           .content {
             white-space: normal;
-            overflow-wrap: break-word;
-            hyphens: auto;
+            // overflow-wrap: break-word;
+            // hyphens: auto;
           }
         }
       }
@@ -210,7 +244,9 @@
         }
       }
 
-      &.only-image {
+      &.only-image,
+      &.video,
+      &.audio {
         width: auto;
         display: inline-block;
         max-height: 80vh;
@@ -230,18 +266,6 @@
           width: auto;
           padding-right: 0;
           margin-right: 0;
-
-          img {
-            display: block; /* Ensure no extra inline spacing */
-            width: auto;
-            height: auto;
-            max-width: 100%;
-            max-height: 100%;
-            max-height: calc(
-              80vh - 60px
-            ); /* Constrain height to viewport height */
-            object-fit: contain; /* Ensure the image fits within the bounds */
-          }
         }
       }
     }

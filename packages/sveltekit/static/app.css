@@ -38,6 +38,7 @@
     /* Typo */
     --font-family-normal: 'lars-extended', sans-serif;
     --font-family-extended: 'lars-extended', sans-serif;
+    --font-size-small: 13px;
     --font-size-normal: 15px;
     --font-size-mid: 22px;
     --font-size-large: 38px;
@@ -93,4 +94,8 @@ button {
   border: none;
   font-size: var(--font-size-normal);
   font-family: var(--font-family-normal)
+}
+
+p.reference {
+  font-size: var(--font-size-small);
 }

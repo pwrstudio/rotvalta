@@ -906,11 +906,23 @@
             },
             {
               "type": "string",
+              "value": "video-and-text"
+            },
+            {
+              "type": "string",
               "value": "audio"
             },
             {
               "type": "string",
+              "value": "audio-and-text"
+            },
+            {
+              "type": "string",
               "value": "audio-and-image"
+            },
+            {
+              "type": "string",
+              "value": "audio-image-and-text"
             }
           ]
         },
@@ -1174,11 +1186,23 @@
             },
             {
               "type": "string",
+              "value": "video-and-text"
+            },
+            {
+              "type": "string",
               "value": "audio"
             },
             {
               "type": "string",
+              "value": "audio-and-text"
+            },
+            {
+              "type": "string",
               "value": "audio-and-image"
+            },
+            {
+              "type": "string",
+              "value": "audio-image-and-text"
             }
           ]
         },
@@ -2299,6 +2323,10 @@
                       {
                         "type": "string",
                         "value": "normal"
+                      },
+                      {
+                        "type": "string",
+                        "value": "reference"
                       }
                     ]
                   },
