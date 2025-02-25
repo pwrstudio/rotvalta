@@ -6,7 +6,7 @@ export default defineConfig({
 	plugins: [sveltekit()],
 	resolve: {
 		alias: {
-		'@sanity-types': path.resolve(__dirname, '../sanity/sanity.types.ts') // Adjust the path as needed
+			'@sanity-types': path.resolve(__dirname, '../sanity/sanity.types.ts')
 		}
 	  }
 });

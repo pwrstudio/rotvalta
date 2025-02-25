@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { onMount } from "svelte"
   import { LANGUAGE } from "$lib/enums"
   import type { FieldNote, ArchivalNote, Page } from "@sanity-types"
   import { renderBlockText, urlFor } from "$lib/modules/sanity"
