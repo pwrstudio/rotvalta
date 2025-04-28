@@ -37,7 +37,6 @@
     <!-- CONTENT -->
     <div class="content">
       {@html renderBlockText(content)}
-      <!-- <a class="read-more">Read more</div> -->
     </div>
 
     <!-- LOGOS -->
@@ -59,10 +58,6 @@
     margin-right: var(--total-margin);
     width: 50ch;
     padding-inline: var(--total-margin);
-    // flex-shrink: 0;
-    // flex-direction: column;
-    // justify-content: center;
-    // align-items: center;
     position: relative;
 
     display: none;

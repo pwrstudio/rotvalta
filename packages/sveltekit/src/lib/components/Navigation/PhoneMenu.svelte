@@ -89,6 +89,11 @@
       position: fixed;
       top: 15px;
       right: 20px;
+      color: var(--foreground-color);
+
+      &:hover {
+        color: var(--accent-color);
+      }
     }
 
     .inner {
