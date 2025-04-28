@@ -83,7 +83,7 @@ export default {
             description: 'URL for vimeo or youtube video.',
             name: 'videoUrl',
             type: 'url',
-            hidden: ({document} : {document: any}) => !document?.layout.includes('video')
+            hidden: ({document} : {document: any}) => !(document?.layout ?? []).includes('video')
         },
         {
             title: 'Video aspect ratio',
@@ -96,7 +96,7 @@ export default {
                     { title: '4:3', value: '4-3' },
                 ],
             },
-            hidden: ({document} : {document: any}) => !document?.layout.includes('video')
+            hidden: ({document} : {document: any}) => !(document?.layout ?? []).includes('video')
         },
         {
             title: 'Audio file (mp3 format)',
@@ -105,27 +105,27 @@ export default {
             options: {
                 accept: 'audio/*',
             },
-            hidden: ({document} : {document: any}) => !document?.layout.includes('audio')
+            hidden: ({document} : {document: any}) => !(document?.layout ?? []).includes('audio')
         },
         {
             title: "Audio title",
             name: "audioTitle",
             type: "string",
-            hidden: ({document} : {document: any}) => !document?.layout.includes('audio')
+            hidden: ({document} : {document: any}) => !(document?.layout ?? []).includes('audio')
         },
         {
             title: 'Content (Swedish)',
             name: 'content_se',
             type: 'contentEditor',
             group: 'se',
-            hidden: ({document} : {document: any}) => !document?.layout.includes('text')
+            hidden: ({document} : {document: any}) => !(document?.layout ?? []).includes('text')
         },
         {
             title: 'Content (English)',
             name: 'content_en',
             type: 'contentEditor',
             group: 'en',
-            hidden: ({document} : {document: any}) => !document?.layout.includes('text')
+            hidden: ({document} : {document: any}) => !(document?.layout ?? []).includes('text')
         },
         {
             title: 'Slug',
