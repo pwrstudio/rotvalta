@@ -53,19 +53,35 @@
 <div role="presentation" class="pop-up-container" on:click={closePopUp}>
   <div class="pop-up {page?.layout ?? ''}">
     <a {href} class="close" data-sveltekit-noscroll><X /></a>
-    
+
     <!-- MEDIA COLUMN -->
-    {#if page?.layout !== 'only-text'}
+    {#if page?.layout !== "only-text"}
       <div class="column media">
+        <!-- Media title -->
+        <!-- layout?:
+          | 'only-image'
+          | 'video'
+          | 'audio'
+          | 'audio-and-image'
+        -->
+        {#if !page?.layout?.includes("text")}
+          <div class="media-title">
+            <h2>{title}</h2>
+          </div>
+        {/if}
+
         <!-- Video layouts -->
         <!-- 
           | 'video'
           | 'video-and-text' 
         -->
-        {#if page?.layout?.includes('video') && videoUrl}
-          <VideoPlayer {videoUrl} aspectRatio={page.videoAspectRatio ?? "16-9"} />
+        {#if page?.layout?.includes("video") && videoUrl}
+          <VideoPlayer
+            {videoUrl}
+            aspectRatio={page.videoAspectRatio ?? "16-9"}
+          />
         {/if}
-        
+
         <!-- Image layouts -->
         <!--
           | 'text-and-image'
@@ -73,10 +89,10 @@
           | 'audio-and-image'
           | 'audio-image-and-text'
         -->
-        {#if page?.layout?.includes('image')}
+        {#if page?.layout?.includes("image")}
           <img {src} alt={title} draggable="false" />
         {/if}
-        
+
         <!-- Audio layouts -->
         <!--
           | 'audio'
@@ -84,7 +100,7 @@
           | 'audio-and-image'
           | 'audio-image-and-text'
         -->
-        {#if page?.layout?.includes('audio')}
+        {#if page?.layout?.includes("audio")}
           <AudioPlayer
             audioFileUrl={page.audioFileUrl ?? ""}
             title={page.audioTitle}
@@ -101,7 +117,7 @@
       | 'audio-and-text'
       | 'audio-image-and-text' 
     -->
-    {#if page?.layout?.includes('text')}
+    {#if page?.layout?.includes("text")}
       <div class="column text">
         <h2>{title}</h2>
         <div class="content">{@html renderBlockText(content)}</div>
@@ -140,9 +156,6 @@
         display: block;
         overflow-y: auto;
         padding-bottom: 10em;
-      }
-
-      @include screen-size("phone") {
         height: 100vh;
         width: 100vw;
         max-width: 100vw;
@@ -193,6 +206,7 @@
           &.audio-and-image {
             img {
               max-height: calc(100% - 80px);
+              min-width: 460px;
 
               @include screen-size("phone") {
                 max-height: 400px;
@@ -245,11 +259,13 @@
       }
 
       &.only-image,
+      &.audio-and-image,
       &.video,
       &.audio {
         width: auto;
         display: inline-block;
         max-height: 80vh;
+        overflow: hidden;
 
         @include screen-size("phone") {
           max-height: 100vh;
@@ -266,8 +282,37 @@
           width: auto;
           padding-right: 0;
           margin-right: 0;
+          max-height: 80vh;
+          overflow: hidden;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+
+          img,
+          .video-player {
+            max-height: 60vh;
+            width: auto;
+            max-width: 100%;
+            object-fit: contain;
+          }
+
+          .audio-player {
+            width: 100%;
+            min-width: 0;
+          }
         }
       }
+
+      &.audio-and-image {
+        max-width: 600px;
+      }
     }
+  }
+
+  .media-title {
+    padding: 10px;
+    margin-bottom: 0.5em;
+    display: inline-block;
   }
 </style>

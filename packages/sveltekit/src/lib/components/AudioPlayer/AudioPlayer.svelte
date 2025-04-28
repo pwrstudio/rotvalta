@@ -92,6 +92,7 @@
     background: var(--accent-color);
     padding: var(--inner-margin);
     width: 100%;
+    min-width: 460px;
   }
 
   .controls {

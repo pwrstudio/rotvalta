@@ -40,6 +40,8 @@
     cursor: pointer;
     line-height: 0;
     position: relative;
+    height: auto;
+    max-height: 80vh;
 
     @include screen-size("phone") {
       max-width: unset;

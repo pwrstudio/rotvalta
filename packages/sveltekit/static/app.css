@@ -99,3 +99,9 @@ button {
 p.reference {
   font-size: var(--font-size-small);
 }
+
+/* Target the first p.reference that appears after p.normal paragraphs */
+p.normal + p.reference,
+p.normal ~ p.reference:first-of-type {
+  margin-top: 4em;
+}
