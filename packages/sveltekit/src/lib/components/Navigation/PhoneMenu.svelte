@@ -76,7 +76,7 @@
     z-index: var(--z-phone-nav);
     top: 0;
     left: 0;
-    width: 100vw;
+    width: 100dvw;
     height: 100ch;
     display: none;
     background: var(--background-color);
@@ -97,7 +97,7 @@
       justify-content: center;
       align-items: center;
       font-size: 32px;
-      padding-top: 20vh;
+      padding-top: 20dvh;
     }
   }
 </style>

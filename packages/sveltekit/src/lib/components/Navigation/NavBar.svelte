@@ -38,7 +38,7 @@
     position: absolute;
     bottom: var(--total-margin);
     left: var(--total-margin);
-    width: calc(100vw - var(--double-total-margin));
+    width: calc(100dvw - var(--double-total-margin));
     display: flex;
     justify-content: space-between;
     z-index: var(--z-nav);

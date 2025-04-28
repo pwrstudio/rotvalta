@@ -95,26 +95,26 @@
   @import "../lib/styles/index.scss";
 
   .above-fold {
-    height: 100vh;
-    width: 100vw;
+    height: 100dvh;
+    width: 100dvw;
     position: relative;
     overflow: hidden;
 
     @include screen-size("phone") {
       flex-wrap: wrap;
-      height: 200vh;
+      height: 200dvh;
     }
 
     .scroll-container {
       display: flex;
       flex-wrap: nowrap;
       overflow-y: hidden;
-      height: 100vh;
+      height: 100dvh;
     }
   }
 
   .below-fold {
-    width: 100vw;
+    width: 100dvw;
     display: flex;
     overflow: hidden;
   }

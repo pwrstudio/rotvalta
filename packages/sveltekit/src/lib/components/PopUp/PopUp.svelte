@@ -134,8 +134,8 @@
     z-index: var(--z-modal);
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
+    width: 100dvw;
+    height: 100dvh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -143,8 +143,8 @@
 
     .pop-up {
       width: 1200px;
-      max-width: 75vw;
-      max-height: 90vh;
+      max-width: 75dvw;
+      max-height: 90dvh;
       padding: var(--total-margin);
       background: var(--background-color);
       border: 1px solid var(--accent-color);
@@ -156,10 +156,10 @@
         display: block;
         overflow-y: auto;
         padding-bottom: 10em;
-        height: 100vh;
-        width: 100vw;
-        max-width: 100vw;
-        max-height: 100vh;
+        height: 100dvh;
+        width: 100dvw;
+        max-width: 100dvw;
+        max-height: 100dvh;
         border: none;
         flex-direction: column;
         padding-top: 60px;
@@ -245,8 +245,8 @@
         width: 70ch;
 
         @include screen-size("phone") {
-          height: 100vh;
-          width: 100vw;
+          height: 100dvh;
+          width: 100dvw;
         }
 
         .media {
@@ -264,13 +264,13 @@
       &.audio {
         width: auto;
         display: inline-block;
-        max-height: 80vh;
+        max-height: 80dvh;
         overflow: hidden;
 
         @include screen-size("phone") {
-          max-height: 100vh;
-          height: 100vh;
-          width: 100vw;
+          max-height: 100dvh;
+          height: 100dvh;
+          width: 100dvw;
         }
 
         .text {
@@ -282,7 +282,7 @@
           width: auto;
           padding-right: 0;
           margin-right: 0;
-          max-height: 80vh;
+          max-height: 80dvh;
           overflow: hidden;
           display: flex;
           flex-direction: column;
@@ -291,7 +291,7 @@
 
           img,
           .video-player {
-            max-height: 60vh;
+            max-height: 60dvh;
             width: auto;
             max-width: 100%;
             object-fit: contain;

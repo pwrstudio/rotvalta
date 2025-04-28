@@ -53,7 +53,7 @@
   @import "../../styles/index.scss";
 
   .notes {
-    height: 100vh;
+    height: 100dvh;
     position: relative;
     display: flex;
     align-items: center;

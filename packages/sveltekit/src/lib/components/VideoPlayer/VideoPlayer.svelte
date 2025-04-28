@@ -35,17 +35,17 @@
 
   .video-player {
     width: 720px;
-    max-width: 60vw;
+    max-width: 60dvw;
     aspect-ratio: 16/9;
     cursor: pointer;
     line-height: 0;
     position: relative;
     height: auto;
-    max-height: 80vh;
+    max-height: 80dvh;
 
     @include screen-size("phone") {
       max-width: unset;
-      width: 80vw;
+      width: 80dvw;
     }
 
     &.ratio-16-9 {

@@ -39,8 +39,8 @@
     z-index: var(--z-modal);
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
+    width: 100dvw;
+    height: 100dvh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -48,8 +48,8 @@
 
     .pop-up {
       width: 800px;
-      max-width: 75vw;
-      max-height: 70vh;
+      max-width: 75dvw;
+      max-height: 70dvh;
       padding: var(--total-margin);
       background: var(--background-color);
       border: 1px solid var(--accent-color);
@@ -57,10 +57,10 @@
       display: flex;
 
       @include screen-size("phone") {
-        height: 100vh;
-        width: 100vw;
-        max-width: 100vw;
-        max-height: 100vh;
+        height: 100dvh;
+        width: 100dvw;
+        max-width: 100dvw;
+        max-height: 100dvh;
         border: none;
         padding-top: 60px;
       }

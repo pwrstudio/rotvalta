@@ -16,6 +16,13 @@
     language === LANGUAGE.ENGLISH
       ? (homepage.content_en?.content ?? [])
       : (homepage.content_se?.content ?? [])
+
+  function scrollToNotes() {
+    const notesElement = document.getElementById("notes")
+    if (notesElement) {
+      notesElement.scrollIntoView({ behavior: "smooth" })
+    }
+  }
 </script>
 
 <div class="about">
@@ -39,9 +46,9 @@
     </div>
   </div>
 
-  <div class="arrow-down">
+  <button class="arrow-down" on:click={scrollToNotes}>
     <ArrowDown />
-  </div>
+  </button>
 </div>
 
 <style lang="scss">
@@ -61,8 +68,8 @@
     display: none;
 
     @include screen-size("phone") {
-      height: 100vh;
-      width: 100vw;
+      height: 100dvh;
+      width: 100dvw;
       display: flex;
       border-bottom: 1px solid var(--accent-color);
     }
@@ -96,6 +103,7 @@
       left: 50%;
       transform: translateX(-50%);
       color: var(--accent-color);
+      cursor: pointer;
     }
   }
 </style>
