@@ -16,6 +16,11 @@
   function toggleMenu() {
     open = !open
   }
+
+  async function closeMenuWithDelay() {
+    await new Promise(resolve => setTimeout(resolve, 100))
+    toggleMenu()
+  }
 </script>
 
 {#if open}
@@ -40,7 +45,7 @@
         on:clicked={toggleMenu}
       />
       {#each pages as page}
-        <MenuItem {page} {language} on:clicked={toggleMenu} />
+        <MenuItem {page} {language} on:clicked={closeMenuWithDelay} />
       {/each}
     </div>
   </div>

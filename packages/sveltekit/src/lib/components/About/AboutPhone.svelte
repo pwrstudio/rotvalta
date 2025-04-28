@@ -70,7 +70,7 @@
     }
 
     .inner {
-      margin-top: 8em;
+      margin-top: 4em;
     }
 
     .title {
