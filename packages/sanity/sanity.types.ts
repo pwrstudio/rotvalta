@@ -80,6 +80,7 @@ export type Conversation = {
       _weak?: boolean
       [internalGroqTypeReferenceTo]?: 'sanity.imageAsset'
     }
+    media?: unknown
     hotspot?: SanityImageHotspot
     crop?: SanityImageCrop
     _type: 'image'
@@ -158,6 +159,7 @@ export type FieldNote = {
       _weak?: boolean
       [internalGroqTypeReferenceTo]?: 'sanity.imageAsset'
     }
+    media?: unknown
     hotspot?: SanityImageHotspot
     crop?: SanityImageCrop
     _type: 'image'
@@ -182,6 +184,7 @@ export type FieldNote = {
       _weak?: boolean
       [internalGroqTypeReferenceTo]?: 'sanity.fileAsset'
     }
+    media?: unknown
     _type: 'file'
   }
   audioTitle?: string
@@ -205,6 +208,7 @@ export type ArchivalNote = {
       _weak?: boolean
       [internalGroqTypeReferenceTo]?: 'sanity.imageAsset'
     }
+    media?: unknown
     hotspot?: SanityImageHotspot
     crop?: SanityImageCrop
     _type: 'image'
@@ -229,6 +233,7 @@ export type ArchivalNote = {
       _weak?: boolean
       [internalGroqTypeReferenceTo]?: 'sanity.fileAsset'
     }
+    media?: unknown
     _type: 'file'
   }
   audioTitle?: string
@@ -252,6 +257,7 @@ export type Page = {
       _weak?: boolean
       [internalGroqTypeReferenceTo]?: 'sanity.imageAsset'
     }
+    media?: unknown
     hotspot?: SanityImageHotspot
     crop?: SanityImageCrop
     _type: 'image'
@@ -266,6 +272,7 @@ export type Page = {
       _weak?: boolean
       [internalGroqTypeReferenceTo]?: 'sanity.fileAsset'
     }
+    media?: unknown
     _type: 'file'
   }
   audioTitle?: string
@@ -324,6 +331,7 @@ export type Homepage = {
         _weak?: boolean
         [internalGroqTypeReferenceTo]?: 'sanity.imageAsset'
       }
+      media?: unknown
       hotspot?: SanityImageHotspot
       crop?: SanityImageCrop
       _type: 'image'
