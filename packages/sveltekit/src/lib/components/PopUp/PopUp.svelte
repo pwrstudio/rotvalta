@@ -314,5 +314,7 @@
     padding: 10px;
     margin-bottom: 0.5em;
     display: inline-block;
+    line-height: 1.1;
+    min-height: fit-content;
   }
 </style>
