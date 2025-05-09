@@ -20,8 +20,8 @@
   // Text content
   $: content =
     language === LANGUAGE.ENGLISH
-      ? (replaceNbspInText(page.content_en?.content) ?? [])
-      : (replaceNbspInText(page.content_se?.content) ?? [])
+      ? replaceNbspInText(page.content_en?.content ?? [])
+      : replaceNbspInText(page.content_se?.content ?? [])
 
   // Return URL for close button
   $: href = language === LANGUAGE.ENGLISH ? "/en" : "/"
@@ -117,7 +117,7 @@
       | 'audio-and-text'
       | 'audio-image-and-text' 
     -->
-    {#if page?.layout?.includes("text")}
+    {#if page?.layout?.includes("text") && content.length > 0}
       <div class="column text">
         <h2>{title}</h2>
         <div class="content">{@html renderBlockText(content)}</div>

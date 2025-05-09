@@ -1,6 +1,3 @@
-
-import type { ImageObject } from "$lib/types";
-
 export function splitArray<T>(arr: T[]): [T[], T[]] {
     const firstArray: T[] = [];
     const secondArray: T[] = [];
