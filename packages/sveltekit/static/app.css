@@ -105,3 +105,12 @@ p.normal + p.reference,
 p.normal ~ p.reference:first-of-type {
   margin-top: 4em;
 }
+
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
