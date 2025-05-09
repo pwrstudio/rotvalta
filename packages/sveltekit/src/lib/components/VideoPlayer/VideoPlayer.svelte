@@ -35,7 +35,7 @@
 
   .video-player {
     width: 720px;
-    max-width: 60dvw;
+    max-width: 100%;
     aspect-ratio: 16/9;
     cursor: pointer;
     line-height: 0;
