@@ -42,6 +42,29 @@ export default {
                         ]
                     },
                 },
+                {
+                    type: 'object',
+                    name: 'horizontalRule',
+                    title: 'Horizontal Rule',
+                    fields: [
+                        {
+                            name: 'spacer',
+                            type: 'boolean',
+                            title: 'Add spacing',
+                            description: 'Add vertical spacing around the line',
+                            initialValue: true
+                        }
+                    ],
+                    preview: {
+                        select: {
+                            spacer: 'spacer'
+                        },
+                        prepare: ({ spacer }) => ({
+                            title: 'Horizontal Rule',
+                            subtitle: spacer ? 'With spacing' : 'No spacing'
+                        })
+                    }
+                }
             ]
         }
     ]

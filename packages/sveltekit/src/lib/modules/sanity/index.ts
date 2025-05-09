@@ -21,14 +21,14 @@ export const renderBlockText = (blocks: any) =>
         dataset: 'production',
     })
 
-export const toPlainText = (blocks: any) => {
+export const toPlainText = (blocks: any[]) => {
     return (
         blocks
-            .map(block => {
+            .map((block: { _type: string; children?: { text: string }[] }) => {
                 if (block._type !== 'block' || !block.children) {
                     return ''
                 }
-                return block.children.map(child => child.text).join('')
+                return block.children.map((child: { text: string }) => child.text).join('')
             })
             .join('\n\n')
     )
@@ -38,9 +38,23 @@ const builder = imageUrlBuilder(client)
 
 export const urlFor = (source: any) => builder.image(source)
 
+interface BlockProps {
+    node: {
+        style?: string;
+    };
+    children: any[];
+}
+
+interface LinkProps {
+    mark: {
+        href: string;
+    };
+    children: any[];
+}
+
 const serializers = {
     marks: {
-        link: props =>
+        link: (props: LinkProps) =>
             h(
                 'a',
                 { target: '_blank', rel: 'noreferrer', href: props.mark.href },
@@ -48,13 +62,16 @@ const serializers = {
             )
     },
     types: {
-        block: props => {
+        block: (props: BlockProps) => {
             const style = props.node.style || 'normal'
             return style === 'blockquote'
                 ? h('blockquote', {}, props.children)
                 : h('p', { className: style }, props.children)
-
         },
+        horizontalRule: (props: { node: { spacer?: boolean } }) => {
+            const className = props.node.spacer ? 'my-8' : ''
+            return h('hr', { className })
+        }
     }
 }
 
