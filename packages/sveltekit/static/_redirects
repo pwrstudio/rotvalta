@@ -1,0 +1,4 @@
+https://rotvalta.netlify.app/*  https://rotvälta.nu/:splat  301!
+http://rotvälta.nu/*     https://rotvälta.nu/:splat  301!
+http://www.rotvälta.nu/* https://rotvälta.nu/:splat  301!
+https://www.rotvälta.nu/* https://rotvälta.nu/:splat 301!
