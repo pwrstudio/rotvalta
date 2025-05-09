@@ -1,5 +1,0 @@
-[[redirects]]
-  from = "https://www.xn--rotvlta-0za.nu/*"
-  to = "https://rotvälta.nu/:splat"
-  status = 301
-  force = true
