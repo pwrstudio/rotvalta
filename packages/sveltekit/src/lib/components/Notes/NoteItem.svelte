@@ -19,24 +19,30 @@
 </a>
 
 <style lang="scss">
+  :root {
+    --small-width: 120px;
+    --normal-width: 160px;
+    --large-width: 200px;
+  }
+
   .note-item {
     line-height: 0;
     user-select: none;
-    width: 200px;
+    width: var(--normal-width);
 
     img {
       width: 100%;
       height: auto;
       object-fit: cover;
-      max-height: 400px;
+      max-height: 300px;
     }
 
     &.small {
-      width: 150px;
+      width: var(--small-width);
     }
 
     &.large {
-      width: 240px;
+      width: var(--large-width);
     }
 
     &:hover {
