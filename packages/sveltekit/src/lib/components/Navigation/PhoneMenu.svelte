@@ -1,7 +1,6 @@
 <script lang="ts">
   import { LANGUAGE } from "$lib/enums"
   import type { Page } from "@sanity-types"
-  import type { Labels } from "$lib/types"
 
   import X from "$lib/components/Graphics/X.svelte"
   import MenuItem from "$lib/components/Navigation/MenuItem.svelte"
@@ -9,7 +8,6 @@
 
   export let language: LANGUAGE
   export let pages: Page[]
-  export let labels: Labels
 
   let open = false
 
@@ -33,14 +31,7 @@
       <MenuItem
         page={undefined}
         directHref={"#notes"}
-        directTitle={"Notes"}
-        {language}
-        on:clicked={toggleMenu}
-      />
-      <MenuItem
-        page={undefined}
-        directHref={"#conversations"}
-        directTitle={"Conversations"}
+        directTitle={language === LANGUAGE.ENGLISH ? "Fragments" : "Fragment"}
         {language}
         on:clicked={toggleMenu}
       />

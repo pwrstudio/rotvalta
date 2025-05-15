@@ -69,7 +69,7 @@
   })
 </script>
 
-<PhoneMenu {language} {pages} {labels} />
+<PhoneMenu {language} {pages} />
 
 <div class="above-fold">
   <LanguageSwitch {language} />
