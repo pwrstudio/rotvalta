@@ -17,7 +17,7 @@
   const defaultDescription =
     "ROTVÄLTA / föreställning är ett offentligt konstprojekt av bildkonstnären Kerstin Bergendal, förankrat i lokaliteten kring Götaplatsen, Göteborg."
   const defaultImage = "https://rotvälta.nu/images/logo.jpg"
-  const canonicalUrl = "https://xn--rotvlta-8wa.nu" // Punycode encoded version of rotvälta.nu
+  const canonicalUrl = "https://rotvälta.nu" // Human-readable IDN version
 
   // Helper function to safely extract content
   function safeContent(content: any, fallback: string): string {
