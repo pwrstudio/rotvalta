@@ -1,0 +1,3 @@
+# https://rotvälta.nu robots.txt
+User-agent: *
+Allow: /

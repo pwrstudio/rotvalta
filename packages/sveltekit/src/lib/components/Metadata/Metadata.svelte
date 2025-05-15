@@ -13,10 +13,11 @@
     undefined
   export let language: LANGUAGE
 
-  const defaultDescription =
-    "ROTVÄLTA / föreställning är ett processbaserat offentligt konstprojekt av bildkonstnären Kerstin Bergendal, förankrat i lokaliteten, historien och den sociala väven kring Götaplatsen och, i förlängningen, den bredare berättelsen om staden Göteborg i Sverige."
   const defaultTitle = "Rotvälta"
-  const defaultImage = "https://rotvalta.se/logo.png"
+  const defaultDescription =
+    "ROTVÄLTA / föreställning är ett offentligt konstprojekt av bildkonstnären Kerstin Bergendal, förankrat i lokaliteten kring Götaplatsen, Göteborg."
+  const defaultImage = "https://rotvälta.nu/images/logo.jpg"
+  const canonicalUrl = "https://xn--rotvlta-90a.nu" // Punycode encoded version of rotvälta.nu
 
   // Helper function to safely extract content
   function safeContent(content: any, fallback: string): string {
@@ -48,20 +49,44 @@
   })()
 
   $: image = page?.mainImage
-    ? urlFor(page.mainImage).quality(80).height(1200).width(1200).url()
+    ? urlFor(page.mainImage).quality(80).height(630).width(1200).url()
     : defaultImage
 </script>
 
 <svelte:head>
+  <!-- SEO Meta Tags -->
   <title>{title}</title>
-  <meta property="og:title" content={title} />
-  <meta property="twitter:title" content={title} />
-  <meta name="twitter:card" content="summary_large_image" />
   <meta name="description" content={description} />
+  <meta name="author" content="Kerstin Bergendal" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href={canonicalUrl} />
+  <meta name="language" content={language === LANGUAGE.ENGLISH ? "en" : "sv"} />
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
-  <meta property="twitter:description" content={description} />
-  <meta name="image" content={image} />
   <meta property="og:type" content="website" />
+  <meta property="og:url" content={canonicalUrl} />
   <meta property="og:image" content={image} />
-  <meta property="twitter:image" content={image} />
+  <meta property="og:image:alt" content={title} />
+  <meta property="og:site_name" content="Rotvälta" />
+  <meta
+    property="og:locale"
+    content={language === LANGUAGE.ENGLISH ? "en_US" : "sv_SE"}
+  />
+
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={image} />
+  <meta name="twitter:image:alt" content={title} />
+
+  <!-- Additional SEO Meta Tags -->
+  <meta
+    name="keywords"
+    content="Rotvälta, Kerstin Bergendal, konstprojekt, Götaplatsen, Göteborg"
+  />
+  <meta name="geo.region" content="SE-O" />
+  <meta name="geo.placename" content="Göteborg" />
 </svelte:head>
